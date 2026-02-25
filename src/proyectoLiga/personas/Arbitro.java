@@ -10,6 +10,14 @@ public class Arbitro extends Persona {
         this.idArbitro = idArbitro;
     }
 
+    public int getIdArbitro() {
+        return idArbitro;
+    }
+
+    public void setIdArbitro(int idArbitro) {
+        this.idArbitro = idArbitro;
+    }
+
     @Override
     public String toString() {
         return "Arbitro: " + nombre + " " + apellido + " y ha nacido en " + nacionalidad;

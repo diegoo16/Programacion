@@ -9,6 +9,14 @@ public class Entrenador extends Persona {
         this.idEntrenador = idEntrenador;
     }
 
+    public int getIdEntrenador() {
+        return idEntrenador;
+    }
+
+    public void setIdEntrenador(int idEntrenador) {
+        this.idEntrenador = idEntrenador;
+    }
+
     @Override
     public String toString() {
         return "Entrenador: " + nombre + " " + apellido + " y ha nacido en " + nacionalidad;
