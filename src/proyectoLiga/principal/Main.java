@@ -18,7 +18,7 @@ public class Main {
     private static void historiaIntro(Scanner sc) throws InterruptedException {
         System.out.println("========================================");
         System.out.println("         DELUX CHAMPIONS LEAGUE");
-        System.out.println("========================================\n");
+        System.out.println("========================================");
 
         escribirConPausa("El fútbol nunca ha sido solo un juego", 700);
         escribirConPausa("Es constancia , sacrificio y sobretodo momentos que son inolvidables", 700);
