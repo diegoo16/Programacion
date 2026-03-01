@@ -87,7 +87,7 @@ public class Jugador extends Persona {
     public String toString() {
         return "Jugador: " + nombre + " " +
                 apellido + " y ha nacido en " +
-                nacionalidad + " - El jugador juega como" +
+                nacionalidad + " - El jugador juega como " +
                 posicion + " y viste el dorsal " + dorsal;
 
     }
