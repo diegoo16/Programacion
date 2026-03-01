@@ -155,20 +155,20 @@ public class Main {
         List<Equipo> equipos = new ArrayList<>();
 
         Equipo madrid = new Equipo(1, "Real Madrid" , "Madrid" , "Santiago Bernabeu" , 1);
-        Entrenador ancelotti = new Entrenador("Carlo" , "Ancelotti" , "Italia" , 1);
+        Entrenador ancelotti = new Entrenador("Carlo" , "Ancelotti" , "Italiano" , 1);
         madrid.setEntrenador(ancelotti);
 
-        madrid.getJugadores().add(new Jugador("Thibaut", "Courtois" , "Belga", 1, LocalDate.of(1992, 5, 11), 1, "28001", null , 1, Posicion.PORTERO));
-        madrid.getJugadores().add(new Jugador("Daniel", "Carvajal" , "Española", 2, LocalDate.of(1992, 1, 11), 2, "28001", null , 1, Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("Antonio","Rüdiger","Alemana",3,LocalDate.of(1993,3,3),22,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("David","Alaba","Austríaca",4,LocalDate.of(1992,6,24),4,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("Ferland","Mendy","Francesa",5,LocalDate.of(1995,6,8),23,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("Jude","Bellingham","Inglesa",6,LocalDate.of(2003,6,29),5,"28001",null,1,Posicion.CENTROCAMPISTA));
-        madrid.getJugadores().add(new Jugador("Federico","Valverde","Uruguaya",7,LocalDate.of(1998,7,22),15,"28001",null,1,Posicion.CENTROCAMPISTA));
-        madrid.getJugadores().add(new Jugador("Eduardo","Camavinga","Francesa",8,LocalDate.of(2002,11,10),12,"28001",null,1,Posicion.CENTROCAMPISTA));
-        madrid.getJugadores().add(new Jugador("Vinicius","Junior","Brasileña",9,LocalDate.of(2000,7,12),7,"28001",null,1,Posicion.DELANTERO));
-        madrid.getJugadores().add(new Jugador("Rodrygo","Goes","Brasileña",10,LocalDate.of(2001,1,9),11,"28001",null,1,Posicion.DELANTERO));
-        madrid.getJugadores().add(new Jugador("Kylian","Mbappé","Francesa",11,LocalDate.of(1998,12,20),9,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Thibaut", "Courtois" , "Bélgica", 1, LocalDate.of(1992, 5, 11), 1, "28001", null , 1, Posicion.PORTERO));
+        madrid.getJugadores().add(new Jugador("Daniel", "Carvajal" , "España", 2, LocalDate.of(1992, 1, 11), 2, "28001", null , 1, Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Antonio","Rüdiger","Alemania",3,LocalDate.of(1993,3,3),22,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("David","Alaba","Australia",4,LocalDate.of(1992,6,24),4,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Ferland","Mendy","Francia",5,LocalDate.of(1995,6,8),23,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Jude","Bellingham","Inglaterra",6,LocalDate.of(2003,6,29),5,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Federico","Valverde","Uruguay",7,LocalDate.of(1998,7,22),15,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Eduardo","Camavinga","Francia",8,LocalDate.of(2002,11,10),12,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Vinicius","Junior","Brasil",9,LocalDate.of(2000,7,12),7,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Rodrygo","Goes","Brasil",10,LocalDate.of(2001,1,9),11,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Kylian","Mbappé","Francia",11,LocalDate.of(1998,12,20),9,"28001",null,1,Posicion.DELANTERO));
 
         equipos.add(madrid);
         return equipos;
