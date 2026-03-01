@@ -19,6 +19,6 @@ public class Entrenador extends Persona {
 
     @Override
     public String toString() {
-        return "Entrenador: " + nombre + " " + apellido + " y ha nacido en " + nacionalidad;
+        return nombre + " " + apellido + " es " + nacionalidad;
     }
 }
