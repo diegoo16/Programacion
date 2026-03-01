@@ -84,6 +84,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return nombre + " es de " +  ciudad;
+        return nombre;
     }
+
 }
