@@ -82,6 +82,14 @@ public class Equipo {
         }
     }
 
+    public int calcularMediaEquipo() {
+        int suma=0;
+        for(Jugador j : jugadores){
+            suma+=j.getMedia();
+        }
+        return suma;
+    }
+
     @Override
     public String toString() {
         return nombre;

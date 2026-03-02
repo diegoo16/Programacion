@@ -13,9 +13,10 @@ public class Jugador extends Persona {
     private String telefono;
     private int idEquipo;
     private Posicion posicion;
+    private int media;
 
 
-    public Jugador(String nombre, String apellido, String nacionalidad, int idJugador, LocalDate fechaNacimiento, int dorsal, String codigoPostal, String telefono, int idEquipo, Posicion posicion) {
+    public Jugador(String nombre, String apellido, String nacionalidad, int idJugador, LocalDate fechaNacimiento, int dorsal, String codigoPostal, String telefono, int idEquipo, Posicion posicion, int media) {
         super(nombre, apellido, nacionalidad);
         this.idJugador = idJugador;
         this.fechaNacimiento = fechaNacimiento;
@@ -24,6 +25,7 @@ public class Jugador extends Persona {
         this.telefono = telefono;
         this.idEquipo = idEquipo;
         this.posicion = posicion;
+        this.media = media;
     }
 
 
@@ -49,6 +51,10 @@ public class Jugador extends Persona {
 
     public void setDorsal(int dorsal) {
         this.dorsal = dorsal;
+    }
+
+    public void setMedia(int media) {
+        this.media = media;
     }
 
     public String getCodigoPostal() {
@@ -81,6 +87,10 @@ public class Jugador extends Persona {
 
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
+    }
+
+    public int getMedia() {
+        return media;
     }
 
     @Override
