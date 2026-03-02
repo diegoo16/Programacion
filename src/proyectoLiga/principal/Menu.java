@@ -163,60 +163,98 @@ public class Menu {
         Equipo madrid = new Equipo(1,"Real Madrid","Madrid","Santiago Bernabéu",1);
         madrid.setEntrenador(new Entrenador("Carlo","Ancelotti","Italia",1));
 
-        madrid.getJugadores().add(new Jugador("Thibaut","Courtois","Belgica",1,LocalDate.of(1992,5,11),1,"28001",null,1,Posicion.PORTERO));
-        madrid.getJugadores().add(new Jugador("Dani","Carvajal","España",2,LocalDate.of(1992,1,11),2,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("Antonio","Rüdiger","Alemania",3,LocalDate.of(1993,3,3),22,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("David","Alaba","Austria",4,LocalDate.of(1992,6,24),4,"28001",null,1,Posicion.DEFENSA));
-        madrid.getJugadores().add(new Jugador("Ferland","Mendy","Francia",5,LocalDate.of(1995,6,8),23,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Thibaut","Courtois","Belgica",1,null,1,"28001",null,1,Posicion.PORTERO));
+        madrid.getJugadores().add(new Jugador("Dani","Carvajal","España",2,null,2,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Antonio","Rüdiger","Alemania",3,null,22,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("David","Alaba","Austria",4,null,4,"28001",null,1,Posicion.DEFENSA));
+        madrid.getJugadores().add(new Jugador("Ferland","Mendy","Francia",5,null,23,"28001",null,1,Posicion.DEFENSA));
 
-        madrid.getJugadores().add(new Jugador("Jude","Bellingham","Inglaterra",6,LocalDate.of(2003,6,29),5,"28001",null,1,Posicion.CENTROCAMPISTA));
-        madrid.getJugadores().add(new Jugador("Federico","Valverde","Uruguay",7,LocalDate.of(1998,7,22),15,"28001",null,1,Posicion.CENTROCAMPISTA));
-        madrid.getJugadores().add(new Jugador("Eduardo","Camavinga","Francia",8,LocalDate.of(2002,11,10),12,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Jude","Bellingham","Inglaterra",6,null,5,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Federico","Valverde","Uruguay",7,null,15,"28001",null,1,Posicion.CENTROCAMPISTA));
+        madrid.getJugadores().add(new Jugador("Eduardo","Camavinga","Francia",8,null,12,"28001",null,1,Posicion.CENTROCAMPISTA));
 
-        madrid.getJugadores().add(new Jugador("Vinicius","Junior","Brasil",9,LocalDate.of(2000,7,12),7,"28001",null,1,Posicion.DELANTERO));
-        madrid.getJugadores().add(new Jugador("Rodrygo","Goes","Brasil",10,LocalDate.of(2001,1,9),11,"28001",null,1,Posicion.DELANTERO));
-        madrid.getJugadores().add(new Jugador("Kylian","Mbappé","Francia",11,LocalDate.of(1998,12,20),9,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Vinicius","Junior","Brasil",9,null,7,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Rodrygo","Goes","Brasil",10,null,11,"28001",null,1,Posicion.DELANTERO));
+        madrid.getJugadores().add(new Jugador("Kylian","Mbappé","Francia",11,null,9,"28001",null,1,Posicion.DELANTERO));
 
         lista.add(madrid);
 
         Equipo barca = new Equipo(2,"FC Barcelona","Barcelona","Camp Nou",2);
         barca.setEntrenador(new Entrenador("Hansi","Flick","Alemania",2));
 
-        barca.getJugadores().add(new Jugador("Marc-André","ter Stegen","Alemania",12,LocalDate.of(1992,4,30),1,"08001",null,2,Posicion.PORTERO));
-        barca.getJugadores().add(new Jugador("Jules","Koundé","Francia",13,LocalDate.of(1998,11,12),23,"08001",null,2,Posicion.DEFENSA));
-        barca.getJugadores().add(new Jugador("Ronald","Araújo","Uruguay",14,LocalDate.of(1999,3,7),4,"08001",null,2,Posicion.DEFENSA));
-        barca.getJugadores().add(new Jugador("Pau","Cubarsí","España",15,LocalDate.of(2007,1,22),2,"08001",null,2,Posicion.DEFENSA));
-        barca.getJugadores().add(new Jugador("Alejandro","Balde","España",16,LocalDate.of(2003,10,18),3,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Marc-André","ter Stegen","Alemania",12,null,1,"08001",null,2,Posicion.PORTERO));
+        barca.getJugadores().add(new Jugador("Jules","Koundé","Francia",13,null,23,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Ronald","Araújo","Uruguay",14,null,4,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Pau","Cubarsí","España",15,null,2,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Alejandro","Balde","España",16,null,3,"08001",null,2,Posicion.DEFENSA));
 
-        barca.getJugadores().add(new Jugador("Frenkie","de Jong","Paises Bajos",17,LocalDate.of(1997,5,12),21,"08001",null,2,Posicion.CENTROCAMPISTA));
-        barca.getJugadores().add(new Jugador("Pedri","González","España",18,LocalDate.of(2002,11,25),8,"08001",null,2,Posicion.CENTROCAMPISTA));
-        barca.getJugadores().add(new Jugador("Gavi","Páez","España",19,LocalDate.of(2004,8,5),6,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Frenkie","de Jong","Paises Bajos",17,null,21,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Pedri","González","España",18,null,8,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Gavi","Páez","España",19,null,6,"08001",null,2,Posicion.CENTROCAMPISTA));
 
-        barca.getJugadores().add(new Jugador("Lamine","Yamal","España",20,LocalDate.of(2007,7,13),27,"08001",null,2,Posicion.DELANTERO));
-        barca.getJugadores().add(new Jugador("Robert","Lewandowski","Polonia",21,LocalDate.of(1988,8,21),9,"08001",null,2,Posicion.DELANTERO));
-        barca.getJugadores().add(new Jugador("Raphinha","Dias","Brasil",22,LocalDate.of(1996,12,14),11,"08001",null,2,Posicion.DELANTERO));
+        barca.getJugadores().add(new Jugador("Lamine","Yamal","España",20,null,27,"08001",null,2,Posicion.DELANTERO));
+        barca.getJugadores().add(new Jugador("Robert","Lewandowski","Polonia",21,null,9,"08001",null,2,Posicion.DELANTERO));
+        barca.getJugadores().add(new Jugador("Raphinha","Dias","Brasil",22,null,11,"08001",null,2,Posicion.DELANTERO));
 
         lista.add(barca);
 
         Equipo leganes = new Equipo(3,"CD Leganés","Leganés","Estadio Butarque",3);
         leganes.setEntrenador(new Entrenador("Igor","Oca","España",3));
 
-        leganes.getJugadores().add(new Jugador("Juan","Soriano","España",23,LocalDate.of(1997,8,23),1,"28918",null,3,Posicion.PORTERO));
-        leganes.getJugadores().add(new Jugador("Enric","Franquesa","España",24,LocalDate.of(1997,2,26),15,"28918",null,3,Posicion.DEFENSA));
-        leganes.getJugadores().add(new Jugador("Ignasi","Miquel","España",25,LocalDate.of(1992,9,28),5,"28918",null,3,Posicion.DEFENSA));
-        leganes.getJugadores().add(new Jugador("Gonzalo","Aguilar","España",26,LocalDate.of(2002,6,11),6,"28918",null,3,Posicion.DEFENSA));
-        leganes.getJugadores().add(new Jugador("Sebastián","Figueredo","Uruguay",27,LocalDate.of(2001,8,25),22,"28918",null,3,Posicion.DEFENSA));
+        leganes.getJugadores().add(new Jugador("Juan","Soriano","España",23,null,1,"28918",null,3,Posicion.PORTERO));
+        leganes.getJugadores().add(new Jugador("Enric","Franquesa","España",24,null,15,"28918",null,3,Posicion.DEFENSA));
+        leganes.getJugadores().add(new Jugador("Ignasi","Miquel","España",25,null,5,"28918",null,3,Posicion.DEFENSA));
+        leganes.getJugadores().add(new Jugador("Gonzalo","Aguilar","España",26,null,6,"28918",null,3,Posicion.DEFENSA));
+        leganes.getJugadores().add(new Jugador("Sebastián","Figueredo","Uruguay",27,null,22,"28918",null,3,Posicion.DEFENSA));
 
-        leganes.getJugadores().add(new Jugador("Óscar","Plano","España",28,LocalDate.of(1991,2,11),20,"28918",null,3,Posicion.CENTROCAMPISTA));
-        leganes.getJugadores().add(new Jugador("Dani","Rodríguez","España",29,LocalDate.of(1988,6,6),9,"28918",null,3,Posicion.CENTROCAMPISTA));
-        leganes.getJugadores().add(new Jugador("Amadou","Diawara","Guinea Ecuatorial",30,LocalDate.of(1997,7,17),24,"28918",null,3,Posicion.CENTROCAMPISTA));
+        leganes.getJugadores().add(new Jugador("Óscar","Plano","España",28,null,20,"28918",null,3,Posicion.CENTROCAMPISTA));
+        leganes.getJugadores().add(new Jugador("Dani","Rodríguez","España",29,null,9,"28918",null,3,Posicion.CENTROCAMPISTA));
+        leganes.getJugadores().add(new Jugador("Amadou","Diawara","Guinea",30,null,24,"28918",null,3,Posicion.CENTROCAMPISTA));
 
-        leganes.getJugadores().add(new Jugador("Naím","García","España",31,LocalDate.of(2002,6,11),17,"28918",null,3,Posicion.DELANTERO));
-        leganes.getJugadores().add(new Jugador("Luis","Asué","Guinea Ecuatorial",32,LocalDate.of(2001,7,9),12,"28918",null,3,Posicion.DELANTERO));
-        leganes.getJugadores().add(new Jugador("Juan","Cruz","España",33,LocalDate.of(2000,4,25),10,"28918",null,3,Posicion.DELANTERO));
+        leganes.getJugadores().add(new Jugador("Naím","García","España",31,null,17,"28918",null,3,Posicion.DELANTERO));
+        leganes.getJugadores().add(new Jugador("Luis","Asué","Guinea",32,null,12,"28918",null,3,Posicion.DELANTERO));
+        leganes.getJugadores().add(new Jugador("Juan","Cruz","España",33,null,10,"28918",null,3,Posicion.DELANTERO));
 
         lista.add(leganes);
 
+
+        Equipo betis = new Equipo(4, "Real Betis", "Sevilla", "Benito Villamarín", 4);
+        betis.setEntrenador(new Entrenador("Manuel", "Pellegrini", "Chile", 4));
+
+        betis.getJugadores().add(new Jugador("Álvaro", "Valles", "España", 34, null, 1, "41001", null, 4, Posicion.PORTERO));
+        betis.getJugadores().add(new Jugador("Ricardo", "Rodríguez", "Chile", 35, null, 12, "41001", null, 4, Posicion.DEFENSA));
+        betis.getJugadores().add(new Jugador("Natan Bernardo", "de Souza", "Brasil", 36, null, 4, "41001", null, 4, Posicion.DEFENSA));
+        betis.getJugadores().add(new Jugador("Diego", "Llorente", "España", 37, null, 3, "41001", null, 4, Posicion.DEFENSA));
+        betis.getJugadores().add(new Jugador("Aitor", "Ruibal", "España", 38, null, 24, "41001", null, 4, Posicion.DEFENSA));
+
+        betis.getJugadores().add(new Jugador("Álvaro", "Fidalgo", "Mexico", 39, null, 15, "41001", null, 4, Posicion.CENTROCAMPISTA));
+        betis.getJugadores().add(new Jugador("Marc", "Roca", "España", 40, null, 21, "41001", null, 4, Posicion.CENTROCAMPISTA));
+        betis.getJugadores().add(new Jugador("Pablo", "Fornals", "España", 41, null, 8, "41001", null, 4, Posicion.CENTROCAMPISTA));
+
+        betis.getJugadores().add(new Jugador("Abde", "Ezzalzouli", "Marruecos", 42, null, 10, "41001", null, 4, Posicion.DELANTERO));
+        betis.getJugadores().add(new Jugador("Cucho", "Hernández", "Colombia", 43, null, 19, "41001", null, 4, Posicion.DELANTERO));
+        betis.getJugadores().add(new Jugador("Antony", "", "Brasil", 44, null, 7, "41001", null, 4, Posicion.DELANTERO));
+
+        lista.add(betis);
+
+        Equipo realSociedad = new Equipo(5, "Real Sociedad", "San Sebastián", "Reale Arena", 5);
+        realSociedad.setEntrenador(new Entrenador("Pellegrino", "Matarazzo", "Estados Unidos", 5));
+
+        realSociedad.getJugadores().add(new Jugador("Álex", "Remiro", "España", 45, null, 1, "20001", null, 5, Posicion.PORTERO));
+        realSociedad.getJugadores().add(new Jugador("Jon", "Aramburu", "Venezuela", 46, null, 2, "20001", null, 5, Posicion.DEFENSA));
+        realSociedad.getJugadores().add(new Jugador("Igor", "Zubeldia", "España", 47, null, 5, "20001", null, 5, Posicion.DEFENSA));
+        realSociedad.getJugadores().add(new Jugador("Duje", "Caleta-Car", "Francia", 48, null, 16, "20001", null, 5, Posicion.DEFENSA));
+        realSociedad.getJugadores().add(new Jugador("Sergio", "Gómez", "España", 49, null, 17, "20001", null, 5, Posicion.DEFENSA));
+
+        realSociedad.getJugadores().add(new Jugador("Jon", "Gorrotxategi", "España", 50, null, 4, "20001", null, 5, Posicion.CENTROCAMPISTA));
+        realSociedad.getJugadores().add(new Jugador("Beñat", "Turrientes", "España", 51, null, 8, "20001", null, 5, Posicion.CENTROCAMPISTA));
+        realSociedad.getJugadores().add(new Jugador("Carlos", "Soler", "España", 52, null, 18, "20001", null, 5, Posicion.CENTROCAMPISTA));
+        realSociedad.getJugadores().add(new Jugador("Arsen", "Zakharyan", "Rusia", 53, null, 21, "20001", null, 5, Posicion.CENTROCAMPISTA));
+
+        realSociedad.getJugadores().add(new Jugador("Gonçalo", "Guedes", "Portugal", 54, null, 11, "20001", null, 5, Posicion.DELANTERO));
+        realSociedad.getJugadores().add(new Jugador("Mikel", "Oyarzabal", "España", 55, null, 10, "20001", null, 5, Posicion.DELANTERO));
+
+        lista.add(realSociedad);
         return lista;
     }
 }
