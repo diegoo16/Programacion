@@ -199,9 +199,9 @@ public class Menu {
     }
 
     private Liga crearPremierLeague() {
-        Liga liga = new Liga (2, "Premier League (aún no esta hecho" , "Inglaterra" , "2025/26");
+        Liga liga = new Liga (2, "Premier League " , "Inglaterra" , "2025/26");
 
-        List <Equipo> equipos = crearEquiposDelux();
+        List <Equipo> equipos = crearEquiposPremierLeague();
         for (Equipo e : equipos) {
             liga.addEquipo(e);
         }
@@ -461,22 +461,22 @@ public class Menu {
 
         lista.add(mallorca);
 
-        Equipo alaves = new Equipo(16, "Deportivo Alavés", "Vitoria-Gasteiz", "Mendizorroza", 16);
-        alaves.setEntrenador(new Entrenador("Eduardo", "Coudet", "Argentina", 16));
+        Equipo alaves = new Equipo(14, "Deportivo Alavés", "Vitoria-Gasteiz", "Mendizorroza", 14);
+        alaves.setEntrenador(new Entrenador("Eduardo", "Coudet", "Argentina", 14));
 
-        alaves.getJugadores().add(new Jugador("Antonio","Sivera","España",144,null,1,"01001",null,16,Posicion.PORTERO , 78));
-        alaves.getJugadores().add(new Jugador("Nahuel","Tenaglia","Argentina",145,null,14,"01001",null,16,Posicion.DEFENSA , 77));
-        alaves.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",146,null,5,"01001",null,16,Posicion.DEFENSA , 79));
-        alaves.getJugadores().add(new Jugador("Rubén","Duarte","España",147,null,3,"01001",null,16,Posicion.DEFENSA , 80));
-        alaves.getJugadores().add(new Jugador("Andoni","Gorosabel","España",148,null,2,"01001",null,16,Posicion.DEFENSA , 78));
+        alaves.getJugadores().add(new Jugador("Antonio","Sivera","España",144,null,1,"01001",null,14,Posicion.PORTERO , 78));
+        alaves.getJugadores().add(new Jugador("Nahuel","Tenaglia","Argentina",145,null,14,"01001",null,14,Posicion.DEFENSA , 77));
+        alaves.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",146,null,5,"01001",null,14,Posicion.DEFENSA , 79));
+        alaves.getJugadores().add(new Jugador("Rubén","Duarte","España",147,null,3,"01001",null,14,Posicion.DEFENSA , 80));
+        alaves.getJugadores().add(new Jugador("Andoni","Gorosabel","España",148,null,2,"01001",null,14,Posicion.DEFENSA , 78));
 
-        alaves.getJugadores().add(new Jugador("Antonio","Blanco","España",149,null,8,"01001",null,16,Posicion.CENTROCAMPISTA , 81));
-        alaves.getJugadores().add(new Jugador("Jon","Guridi","España",150,null,18,"01001",null,16,Posicion.CENTROCAMPISTA , 80));
-        alaves.getJugadores().add(new Jugador("Carlos","Benavídez","Uruguay",151,null,23,"01001",null,16,Posicion.CENTROCAMPISTA , 79));
+        alaves.getJugadores().add(new Jugador("Antonio","Blanco","España",149,null,8,"01001",null,14,Posicion.CENTROCAMPISTA , 81));
+        alaves.getJugadores().add(new Jugador("Jon","Guridi","España",150,null,18,"01001",null,14,Posicion.CENTROCAMPISTA , 80));
+        alaves.getJugadores().add(new Jugador("Carlos","Benavídez","Uruguay",151,null,23,"01001",null,14,Posicion.CENTROCAMPISTA , 79));
 
-        alaves.getJugadores().add(new Jugador("Luis","Rioja","España",152,null,11,"01001",null,16,Posicion.DELANTERO , 83));
-        alaves.getJugadores().add(new Jugador("Kike","García","España",153,null,9,"01001",null,16,Posicion.DELANTERO , 82));
-        alaves.getJugadores().add(new Jugador("Samu","Omorodion","España",154,null,32,"01001",null,16,Posicion.DELANTERO , 84));
+        alaves.getJugadores().add(new Jugador("Luis","Rioja","España",152,null,11,"01001",null,14,Posicion.DELANTERO , 83));
+        alaves.getJugadores().add(new Jugador("Kike","García","España",153,null,9,"01001",null,14,Posicion.DELANTERO , 82));
+        alaves.getJugadores().add(new Jugador("Samu","Omorodion","España",154,null,32,"01001",null,14,Posicion.DELANTERO , 84));
 
         lista.add(alaves);
 
@@ -499,27 +499,345 @@ public class Menu {
 
         lista.add(girona);
 
-        Equipo getafe = new Equipo(14, "Getafe CF", "Getafe", "Coliseum", 14);
-        getafe.setEntrenador(new Entrenador("José", "Bordalás", "España", 14));
+        Equipo getafe = new Equipo(16, "Getafe CF", "Getafe", "Coliseum", 16);
+        getafe.setEntrenador(new Entrenador("José", "Bordalás", "España", 16));
 
 
-        getafe.getJugadores().add(new Jugador("David","Soria","España",166, null, 6,"28901",null,14,Posicion.PORTERO , 78));
-        getafe.getJugadores().add(new Jugador("Kiko","Femenía","España",167,null,2,"28901",null,14,Posicion.DEFENSA , 77));
-        getafe.getJugadores().add(new Jugador("Domingos","Duarte","Cabo Verde",168,null,22,"28901",null,14,Posicion.DEFENSA , 75));
-        getafe.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",169,null,4,"28901",null,14,Posicion.DEFENSA , 77));
-        getafe.getJugadores().add(new Jugador("Djené","Dakonam","Togo",170,null,12,"28901",null,14,Posicion.DEFENSA , 78));
+        getafe.getJugadores().add(new Jugador("David","Soria","España",166, null, 6,"28901",null,16,Posicion.PORTERO , 78));
+        getafe.getJugadores().add(new Jugador("Kiko","Femenía","España",167,null,2,"28901",null,16,Posicion.DEFENSA , 77));
+        getafe.getJugadores().add(new Jugador("Domingos","Duarte","Cabo Verde",168,null,22,"28901",null,16,Posicion.DEFENSA , 75));
+        getafe.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",169,null,4,"28901",null,16,Posicion.DEFENSA , 77));
+        getafe.getJugadores().add(new Jugador("Djené","Dakonam","Togo",170,null,12,"28901",null,16,Posicion.DEFENSA , 78));
 
-        getafe.getJugadores().add(new Jugador("Juan","Iglesias","España",171,null,21,"28901",null,14,Posicion.DEFENSA , 79));
-        getafe.getJugadores().add(new Jugador("Luis","Milla","España",172,null,5,"28901",null,14,Posicion.CENTROCAMPISTA , 76));
-        getafe.getJugadores().add(new Jugador("Mauro","Arambarri","Uruguay",173,null,8,"28901",null,14,Posicion.CENTROCAMPISTA , 76));
+        getafe.getJugadores().add(new Jugador("Juan","Iglesias","España",171,null,21,"28901",null,16,Posicion.DEFENSA , 79));
+        getafe.getJugadores().add(new Jugador("Luis","Milla","España",172,null,5,"28901",null,16,Posicion.CENTROCAMPISTA , 76));
+        getafe.getJugadores().add(new Jugador("Mauro","Arambarri","Uruguay",173,null,8,"28901",null,16,Posicion.CENTROCAMPISTA , 76));
 
-        getafe.getJugadores().add(new Jugador("Mario","Martín","España",174,null,6,"28901",null,14,Posicion.CENTROCAMPISTA , 78));
-        getafe.getJugadores().add(new Jugador("Luis","Vázquez","Argentina",175,null,9,"28901",null,14,Posicion.DELANTERO , 78));
-        getafe.getJugadores().add(new Jugador("Martín","Satriano","Uruguay",176,null,19,"28901",null,14,Posicion.DELANTERO , 79));
+        getafe.getJugadores().add(new Jugador("Mario","Martín","España",174,null,6,"28901",null,16,Posicion.CENTROCAMPISTA , 78));
+        getafe.getJugadores().add(new Jugador("Luis","Vázquez","Argentina",175,null,9,"28901",null,16,Posicion.DELANTERO , 78));
+        getafe.getJugadores().add(new Jugador("Martín","Satriano","Uruguay",176,null,19,"28901",null,16,Posicion.DELANTERO , 79));
 
         lista.add(getafe);
 
 
         return lista;
+    }
+
+    private List<Equipo> crearEquiposPremierLeague() {
+        List<Equipo> lista = new ArrayList<>();
+        Equipo Liverpool = new Equipo(1,"Liverpool","Liverpool","Anfield",1);
+        Liverpool.setEntrenador(new Entrenador("Arne","Slot","Países Bajos",1));
+
+        Liverpool.getJugadores().add(new Jugador("Alisson","Becker",        "Brasil",            1,null, 1,"L4",null,1,Posicion.PORTERO,       87));
+        Liverpool.getJugadores().add(new Jugador("Conor","Bradley",         "Irlanda del Norte", 2,null,84,"L4",null,1,Posicion.DEFENSA,      82));
+        Liverpool.getJugadores().add(new Jugador("Ibrahima","Konaté",       "Francia",           3,null, 5,"L4",null,1,Posicion.DEFENSA,      85));
+        Liverpool.getJugadores().add(new Jugador("Virgil","van Dijk",       "Países Bajos",      4,null, 4,"L4",null,1,Posicion.DEFENSA,      89));
+        Liverpool.getJugadores().add(new Jugador("Andrew","Robertson",      "Escocia",           5,null,26,"L4",null,1,Posicion.DEFENSA,      85));
+
+        Liverpool.getJugadores().add(new Jugador("Alexis","Mac Allister",   "Argentina",         6,null,10,"L4",null,1,Posicion.CENTROCAMPISTA,86));
+        Liverpool.getJugadores().add(new Jugador("Dominik","Szoboszlai",    "Hungría",           7,null, 8,"L4",null,1,Posicion.CENTROCAMPISTA,85));
+        Liverpool.getJugadores().add(new Jugador("Ryan","Gravenberch",      "Países Bajos",      8,null,38,"L4",null,1,Posicion.CENTROCAMPISTA,84));
+
+        Liverpool.getJugadores().add(new Jugador("Mohamed","Salah",         "Egipto",            9,null,11,"L4",null,1,Posicion.DELANTERO,     89));
+        Liverpool.getJugadores().add(new Jugador("Darwin","Núñez",          "Uruguay",          10,null, 9,"L4",null,1,Posicion.DELANTERO,     85));
+        Liverpool.getJugadores().add(new Jugador("Cody","Gakpo",            "Países Bajos",     11,null,18,"L4",null,1,Posicion.DELANTERO,     85));
+
+        lista.add(Liverpool);
+
+        Equipo ManchesterCity = new Equipo(2,"Manchester City","Manchester","Etihad Stadium",2);
+        ManchesterCity.setEntrenador(new Entrenador("Pep","Guardiola","España",2));
+
+        ManchesterCity.getJugadores().add(new Jugador("Ederson","Moraes",      "Brasil",        12,null,31,"M1",null,2,Posicion.PORTERO,       88));
+        ManchesterCity.getJugadores().add(new Jugador("Kyle","Walker",         "Inglaterra",    13,null, 2,"M1",null,2,Posicion.DEFENSA,      84));
+        ManchesterCity.getJugadores().add(new Jugador("Ruben","Dias",          "Portugal",      14,null, 3,"M1",null,2,Posicion.DEFENSA,      89));
+        ManchesterCity.getJugadores().add(new Jugador("John","Stones",         "Inglaterra",    15,null, 5,"M1",null,2,Posicion.DEFENSA,      86));
+        ManchesterCity.getJugadores().add(new Jugador("Josko","Gvardiol",      "Croacia",       16,null,24,"M1",null,2,Posicion.DEFENSA,      86));
+
+        ManchesterCity.getJugadores().add(new Jugador("Rodri","Hernandez",     "España",        17,null,16,"M1",null,2,Posicion.CENTROCAMPISTA,89));
+        ManchesterCity.getJugadores().add(new Jugador("Kevin","De Bruyne",     "Bélgica",       18,null,17,"M1",null,2,Posicion.CENTROCAMPISTA,91));
+        ManchesterCity.getJugadores().add(new Jugador("Bernardo","Silva",      "Portugal",      19,null,20,"M1",null,2,Posicion.CENTROCAMPISTA,88));
+
+        ManchesterCity.getJugadores().add(new Jugador("Phil","Foden",          "Inglaterra",    20,null,47,"M1",null,2,Posicion.DELANTERO,     89));
+        ManchesterCity.getJugadores().add(new Jugador("Erling","Haaland",      "Noruega",       21,null, 9,"M1",null,2,Posicion.DELANTERO,     92));
+        ManchesterCity.getJugadores().add(new Jugador("Jeremy","Doku",         "Bélgica",       22,null,11,"M1",null,2,Posicion.DELANTERO,     85));
+
+        lista.add(ManchesterCity);
+
+        Equipo Arsenal = new Equipo(3,"Arsenal","Londres","Emirates Stadium",3);
+        Arsenal.setEntrenador(new Entrenador("Mikel","Arteta","España",3));
+
+        Arsenal.getJugadores().add(new Jugador("David","Raya",          "España",      23,null,22,"N7",null,3,Posicion.PORTERO,       85));
+        Arsenal.getJugadores().add(new Jugador("Ben","White",           "Inglaterra",  24,null, 4,"N7",null,3,Posicion.DEFENSA,      84));
+        Arsenal.getJugadores().add(new Jugador("William","Saliba",      "Francia",     25,null, 2,"N7",null,3,Posicion.DEFENSA,      87));
+        Arsenal.getJugadores().add(new Jugador("Gabriel","Magalhaes",   "Brasil",      26,null, 6,"N7",null,3,Posicion.DEFENSA,      86));
+        Arsenal.getJugadores().add(new Jugador("Oleksandr","Zinchenko", "Ucrania",     27,null,35,"N7",null,3,Posicion.DEFENSA,      83));
+
+        Arsenal.getJugadores().add(new Jugador("Declan","Rice",         "Inglaterra",  28,null,41,"N7",null,3,Posicion.CENTROCAMPISTA,89));
+        Arsenal.getJugadores().add(new Jugador("Martin","Odegaard",     "Noruega",     29,null, 8,"N7",null,3,Posicion.CENTROCAMPISTA,88));
+        Arsenal.getJugadores().add(new Jugador("Kai","Havertz",         "Alemania",    30,null,29,"N7",null,3,Posicion.CENTROCAMPISTA,85));
+
+        Arsenal.getJugadores().add(new Jugador("Bukayo","Saka",         "Inglaterra",  32,null, 7,"N7",null,3,Posicion.DELANTERO,     89));
+        Arsenal.getJugadores().add(new Jugador("Gabriel","Martinelli",  "Brasil",     32,null,11,"N7",null,3,Posicion.DELANTERO,     86));
+        Arsenal.getJugadores().add(new Jugador("Gabriel","Jesus",       "Brasil",     33,null, 9,"N7",null,3,Posicion.DELANTERO,     84));
+
+        lista.add(Arsenal);
+
+        Equipo ManchesterUnited = new Equipo(4,"Manchester United","Manchester","Old Trafford",4);
+        ManchesterUnited.setEntrenador(new Entrenador("Erik","Ten Hag","Países Bajos",4));
+
+        ManchesterUnited.getJugadores().add(new Jugador("David",      "De Gea",         "España",        34, null, 1,  "M4", null, 4, Posicion.PORTERO,       86));
+        ManchesterUnited.getJugadores().add(new Jugador("Lisandro",   "Martínez",       "Argentina",     35, null, 6,  "M4", null, 4, Posicion.DEFENSA,       85));
+        ManchesterUnited.getJugadores().add(new Jugador("Raphael",    "Varane",         "Francia",       36, null, 5,  "M4", null, 4, Posicion.DEFENSA,       87));
+        ManchesterUnited.getJugadores().add(new Jugador("Diogo",      "Dalot",          "Portugal",      37, null, 20, "M4", null, 4, Posicion.DEFENSA,       84));
+        ManchesterUnited.getJugadores().add(new Jugador("Tyrell",     "Malinga",        "Países Bajos",  38, null, 23, "M4", null, 4, Posicion.DEFENSA,       83));
+
+        ManchesterUnited.getJugadores().add(new Jugador("Bruno",      "Fernandes",      "Portugal",      39, null, 8,  "M4", null, 4, Posicion.CENTROCAMPISTA,88));
+        ManchesterUnited.getJugadores().add(new Jugador("Casemiro",   "Casemiro",       "Brasil",        40, null, 18, "M4", null, 4, Posicion.CENTROCAMPISTA,87));
+        ManchesterUnited.getJugadores().add(new Jugador("Christian",  "Eriksen",        "Dinamarca",     41, null, 21, "M4", null, 4, Posicion.CENTROCAMPISTA,85));
+
+        ManchesterUnited.getJugadores().add(new Jugador("Marcus",     "Rashford",       "Inglaterra",    42, null, 10, "M4", null, 4, Posicion.DELANTERO,      88));
+        ManchesterUnited.getJugadores().add(new Jugador("Anthony",    "Martial",        "Francia",       43, null, 9,  "M4", null, 4, Posicion.DELANTERO,      84));
+        ManchesterUnited.getJugadores().add(new Jugador("Jadon",      "Sancho",         "Inglaterra",    44, null, 7,  "M4", null, 4, Posicion.DELANTERO,      86));
+
+        lista.add(ManchesterUnited);
+
+        Equipo Chelsea = new Equipo(5,"Chelsea","Londres","Stamford Bridge",5);
+        Chelsea.setEntrenador(new Entrenador("Graham","Potter","Inglaterra",5));
+
+        Chelsea.getJugadores().add(new Jugador("Kepa",        "Arrizabalaga",   "España",        45, null, 1,  "C5", null, 5, Posicion.PORTERO,       85));
+        Chelsea.getJugadores().add(new Jugador("Reece",       "James",          "Inglaterra",    46, null, 24, "C5", null, 5, Posicion.DEFENSA,       86));
+        Chelsea.getJugadores().add(new Jugador("Thiago",      "Silva",          "Brasil",        47, null, 6,  "C5", null, 5, Posicion.DEFENSA,       87));
+        Chelsea.getJugadores().add(new Jugador("Kalidou",     "Koulibaly",      "Senegal",       48, null, 26, "C5", null, 5, Posicion.DEFENSA,       88));
+        Chelsea.getJugadores().add(new Jugador("Wes",         "Fofana",         "Francia",       49, null, 33, "C5", null, 5, Posicion.DEFENSA,       85));
+
+        Chelsea.getJugadores().add(new Jugador("Enzo",        "Fernandez",      "Argentina",     50, null, 8,  "C5", null, 5, Posicion.CENTROCAMPISTA,87));
+        Chelsea.getJugadores().add(new Jugador("Mason",       "Mount",          "Inglaterra",    51, null, 19, "C5", null, 5, Posicion.CENTROCAMPISTA,86));
+        Chelsea.getJugadores().add(new Jugador("N’Golo",      "Kante",          "Francia",       52, null, 7,  "C5", null, 5, Posicion.CENTROCAMPISTA,87));
+
+        Chelsea.getJugadores().add(new Jugador("Raheem",      "Sterling",       "Inglaterra",    53, null, 7,  "C5", null, 5, Posicion.DELANTERO,      86));
+        Chelsea.getJugadores().add(new Jugador("Kai",         "Havertz",        "Alemania",      54, null, 29, "C5", null, 5, Posicion.DELANTERO,      85));
+        Chelsea.getJugadores().add(new Jugador("Mykhailo",    "Mudryk",         "Ucrania",       55, null, 10, "C5", null, 5, Posicion.DELANTERO,      84));
+
+        lista.add(Chelsea);
+
+        Equipo Tottenham = new Equipo(6,"Tottenham Hotspur","Londres","Tottenham Hotspur Stadium",6);
+        Tottenham.setEntrenador(new Entrenador("Antonio","Conte","Italia",6));
+
+        Tottenham.getJugadores().add(new Jugador("Hugo",       "Lloris",       "Francia",       56, null, 1,  "T6", null, 6, Posicion.PORTERO,       86));
+        Tottenham.getJugadores().add(new Jugador("Cristian",   "Romero",       "Argentina",     57, null, 3,  "T6", null, 6, Posicion.DEFENSA,       85));
+        Tottenham.getJugadores().add(new Jugador("Eric",       "Dier",         "Inglaterra",    58, null, 15, "T6", null, 6, Posicion.DEFENSA,       84));
+        Tottenham.getJugadores().add(new Jugador("Ben",        "Davies",       "Gales",         59, null, 33, "T6", null, 6, Posicion.DEFENSA,       84));
+        Tottenham.getJugadores().add(new Jugador("Ivan",       "Perisic",      "Croacia",       60, null, 14, "T6", null, 6, Posicion.DEFENSA,       83));
+
+        Tottenham.getJugadores().add(new Jugador("Pierre-Emile","Højbjerg",    "Dinamarca",     61, null, 5,  "T6", null, 6, Posicion.CENTROCAMPISTA,86));
+        Tottenham.getJugadores().add(new Jugador("Rodrigo",    "Bentancur",    "Uruguay",       62, null, 30, "T6", null, 6, Posicion.CENTROCAMPISTA,85));
+        Tottenham.getJugadores().add(new Jugador("Dejan",      "Kulusevski",   "Suecia",        63, null, 7,  "T6", null, 6, Posicion.CENTROCAMPISTA,85));
+
+        Tottenham.getJugadores().add(new Jugador("Harry",      "Kane",         "Inglaterra",    64, null, 10, "T6", null, 6, Posicion.DELANTERO,      91));
+        Tottenham.getJugadores().add(new Jugador("Son",        "Heung-min",    "Corea del Sur", 65, null, 7,  "T6", null, 6, Posicion.DELANTERO,      90));
+        Tottenham.getJugadores().add(new Jugador("Richarlison","de Andrade",   "Brasil",        66, null, 9,  "T6", null, 6, Posicion.DELANTERO,      86));
+
+        lista.add(Tottenham);
+
+
+        Equipo Newcastle = new Equipo(7,"Newcastle United","Newcastle","St. James' Park",7);
+        Newcastle.setEntrenador(new Entrenador("Eddie","Howe","Inglaterra",7));
+
+        Newcastle.getJugadores().add(new Jugador("Nick","Pope",             "Inglaterra",   67, null, 1,  "N7", null, 7, Posicion.PORTERO,       85));
+        Newcastle.getJugadores().add(new Jugador("Kieran","Trippier",       "Inglaterra",   68, null, 2,  "N7", null, 7, Posicion.DEFENSA,       86));
+        Newcastle.getJugadores().add(new Jugador("Sven","Botman",          "Países Bajos", 69, null, 5,  "N7", null, 7, Posicion.DEFENSA,       86));
+        Newcastle.getJugadores().add(new Jugador("Fabian","Schar",         "Suiza",        70, null, 3,  "N7", null, 7, Posicion.DEFENSA,       84));
+        Newcastle.getJugadores().add(new Jugador("Dan","Burn",             "Inglaterra",   71, null, 24, "N7", null, 7, Posicion.DEFENSA,       83));
+
+        Newcastle.getJugadores().add(new Jugador("Bruno","Guimaraes",      "Brasil",       72, null, 8,  "N7", null, 7, Posicion.CENTROCAMPISTA,87));
+        Newcastle.getJugadores().add(new Jugador("Joelinton","Silva",        "Brasil",       73, null, 7,  "N7", null, 7, Posicion.CENTROCAMPISTA,85));
+        Newcastle.getJugadores().add(new Jugador("Miguel","Almiron",        "Paraguay",     74, null, 10, "N7", null, 7, Posicion.CENTROCAMPISTA,84));
+
+        Newcastle.getJugadores().add(new Jugador("Callum","Wilson",         "Inglaterra",   75, null, 9,  "N7", null, 7, Posicion.DELANTERO,      86));
+        Newcastle.getJugadores().add(new Jugador("Alexander","Isak",         "Suecia",       76, null, 11, "N7", null, 7, Posicion.DELANTERO,      87));
+        Newcastle.getJugadores().add(new Jugador("Allan","Saint-Maximin",   "Francia",      77, null, 7,  "N7", null, 7, Posicion.DELANTERO,      85));
+
+        lista.add(Newcastle);
+
+
+        Equipo AstonVilla = new Equipo(8,"Aston Villa","Birmingham","Villa Park",8);
+        AstonVilla.setEntrenador(new Entrenador("Unai","Emery","España",8));
+
+        AstonVilla.getJugadores().add(new Jugador("Emiliano","Martinez",      "Argentina",    78, null, 1,  "A8", null, 8, Posicion.PORTERO,       86));
+        AstonVilla.getJugadores().add(new Jugador("Matty","Cash",            "Inglaterra",   79, null, 2,  "A8", null, 8, Posicion.DEFENSA,       84));
+        AstonVilla.getJugadores().add(new Jugador("Diego","Carlos",          "Brasil",       80, null, 3,  "A8", null, 8, Posicion.DEFENSA,       85));
+        AstonVilla.getJugadores().add(new Jugador("Ezri","Konsa",            "Inglaterra",   81, null, 5,  "A8", null, 8, Posicion.DEFENSA,       84));
+        AstonVilla.getJugadores().add(new Jugador("Tyrone","Mings",          "Inglaterra",   82, null, 6,  "A8", null, 8, Posicion.DEFENSA,       83));
+
+        AstonVilla.getJugadores().add(new Jugador("John","McGinn",          "Escocia",      83, null, 8,  "A8", null, 8, Posicion.CENTROCAMPISTA,85));
+        AstonVilla.getJugadores().add(new Jugador("Douglas","Luiz",         "Brasil",       84, null, 21, "A8", null, 8, Posicion.CENTROCAMPISTA,86));
+        AstonVilla.getJugadores().add(new Jugador("Jacob","Ramsey",         "Inglaterra",   85, null, 16, "A8", null, 8, Posicion.CENTROCAMPISTA,84));
+
+        AstonVilla.getJugadores().add(new Jugador("Ollie","Watkins",        "Inglaterra",   86, null, 9,  "A8", null, 8, Posicion.DELANTERO,      87));
+        AstonVilla.getJugadores().add(new Jugador("Leon","Bailey",          "Jamaica",      87, null, 7,  "A8", null, 8, Posicion.DELANTERO,      85));
+        AstonVilla.getJugadores().add(new Jugador("Ashley","Young",         "Inglaterra",   88, null, 11, "A8", null, 8, Posicion.DELANTERO,      84));
+
+        lista.add(AstonVilla);
+
+
+        Equipo Brighton = new Equipo(9,"Brighton & Hove Albion","Brighton","Amex Stadium",9);
+        Brighton.setEntrenador(new Entrenador("Roberto","De Zerbi","Italia",9));
+
+        Brighton.getJugadores().add(new Jugador("Robert","Sánchez",       "España",       89, null, 1,  "B9", null, 9, Posicion.PORTERO,       85));
+        Brighton.getJugadores().add(new Jugador("Leandro","Trossard",      "Bélgica",      90, null, 2,  "B9", null, 9, Posicion.DEFENSA,       84));
+        Brighton.getJugadores().add(new Jugador("Adam","Webster",         "Inglaterra",   91, null, 3,  "B9", null, 9, Posicion.DEFENSA,       83));
+        Brighton.getJugadores().add(new Jugador("Lewis","Dunk",           "Inglaterra",   92, null, 5,  "B9", null, 9, Posicion.DEFENSA,       84));
+        Brighton.getJugadores().add(new Jugador("Marc","Cucurella",      "España",       93, null, 23, "B9", null, 9, Posicion.DEFENSA,       85));
+
+        Brighton.getJugadores().add(new Jugador("Pascal","Gross",         "Alemania",     94, null, 8,  "B9", null, 9, Posicion.CENTROCAMPISTA,86));
+        Brighton.getJugadores().add(new Jugador("Moises","Caicedo",       "Ecuador",      95, null, 10, "B9", null, 9, Posicion.CENTROCAMPISTA,85));
+        Brighton.getJugadores().add(new Jugador("Solly","March",          "Inglaterra",   96, null, 7,  "B9", null, 9, Posicion.CENTROCAMPISTA,84));
+
+        Brighton.getJugadores().add(new Jugador("Leandro","Trossard",      "Bélgica",      97, null, 9,  "B9", null, 9, Posicion.DELANTERO,      86));
+        Brighton.getJugadores().add(new Jugador("Danny","Welbeck",        "Inglaterra",   98, null, 11, "B9", null, 9, Posicion.DELANTERO,      84));
+        Brighton.getJugadores().add(new Jugador("Kaoru","Mitoma",          "Japón",        99, null, 7,  "B9", null, 9, Posicion.DELANTERO,      85));
+
+        lista.add(Brighton);
+
+
+        Equipo Wolves = new Equipo(10,"Wolverhampton Wanderers","Wolverhampton","Molineux Stadium",10);
+        Wolves.setEntrenador(new Entrenador("Julen","Lopetegui","España",10));
+
+        Wolves.getJugadores().add(new Jugador("José","Sa",              "Portugal",     100, null, 1, "W10", null, 10, Posicion.PORTERO,      84));
+        Wolves.getJugadores().add(new Jugador("Maximilian","Kilman",     "Inglaterra",   101, null, 2, "W10", null, 10, Posicion.DEFENSA,      83));
+        Wolves.getJugadores().add(new Jugador("Conor","Coady",           "Inglaterra",   102, null, 4, "W10", null, 10, Posicion.DEFENSA,      84));
+        Wolves.getJugadores().add(new Jugador("Marçal","",              "Brasil",       103, null, 6, "W10", null, 10, Posicion.DEFENSA,      83));
+
+        Wolves.getJugadores().add(new Jugador("Rayan","Aït-Nouri",        "Francia",      104, null, 33, "W10", null, 10, Posicion.DEFENSA,      84));
+        Wolves.getJugadores().add(new Jugador("João","Moutinho",         "Portugal",     105, null, 8, "W10", null, 10, Posicion.CENTROCAMPISTA,85));
+        Wolves.getJugadores().add(new Jugador("Matheus","Nunes",         "Portugal",     106, null, 10, "W10", null, 10, Posicion.CENTROCAMPISTA,86));
+        Wolves.getJugadores().add(new Jugador("Daniel","Podence",        "Portugal",     107, null, 7, "W10", null, 10, Posicion.CENTROCAMPISTA,84));
+
+        Wolves.getJugadores().add(new Jugador("Raúl","Jiménez",          "México",       108, null, 9, "W10", null, 10, Posicion.DELANTERO,     86));
+        Wolves.getJugadores().add(new Jugador("Hwang","Hee-chan",        "Corea del Sur",109, null, 11, "W10", null, 10, Posicion.DELANTERO,     84));
+        Wolves.getJugadores().add(new Jugador("Pedro"," Neto",            "Brasil",       110, null, 7, "W10", null, 10, Posicion.DELANTERO,     85));
+
+        lista.add(Wolves);
+
+        Equipo Leicester = new Equipo(11,"Leicester City","Leicester","King Power Stadium",11);
+        Leicester.setEntrenador(new Entrenador("Enzo","Maresca","Italia",11));
+
+        Leicester.getJugadores().add(new Jugador("Danny",       "Ward",       "Gales",       111, null, 1,  "L11", null, 11, Posicion.PORTERO,       84));
+        Leicester.getJugadores().add(new Jugador("Wesley",      "Fofana",     "Francia",     112, null, 2,  "L11", null, 11, Posicion.DEFENSA,       85));
+        Leicester.getJugadores().add(new Jugador("Ryan",        "Bennett",    "Gales",       113, null, 3,  "L11", null, 11, Posicion.DEFENSA,       83));
+        Leicester.getJugadores().add(new Jugador("James",       "Justin",     "Inglaterra",  114, null, 4,  "L11", null, 11, Posicion.DEFENSA,       84));
+
+        Leicester.getJugadores().add(new Jugador("Daniel",      "Amartey",    "Ghana",       115, null, 5,  "L11", null, 11, Posicion.DEFENSA,       83));
+        Leicester.getJugadores().add(new Jugador("Youri",       "Tielemans",  "Bélgica",     116, null, 6,  "L11", null, 11, Posicion.CENTROCAMPISTA,86));
+        Leicester.getJugadores().add(new Jugador("James",       "Maddison",   "Inglaterra",  117, null, 7,  "L11", null, 11, Posicion.CENTROCAMPISTA,85));
+        Leicester.getJugadores().add(new Jugador("Boubakary",   "Soumaré",    "Francia",     118, null, 8,  "L11", null, 11, Posicion.CENTROCAMPISTA,84));
+        Leicester.getJugadores().add(new Jugador("Kelechi",     "Iheanacho",  "Nigeria",     119, null, 9,  "L11", null, 11, Posicion.DELANTERO,      86));
+        Leicester.getJugadores().add(new Jugador("Patson",      "Daka",       "Zambia",      120, null, 10, "L11", null, 11, Posicion.DELANTERO,      85));
+        Leicester.getJugadores().add(new Jugador("Harvey",      "Barnes",     "Inglaterra",  121, null, 11, "L11", null, 11, Posicion.DELANTERO,      84));
+
+        lista.add(Leicester);
+
+
+        Equipo CrystalPalace = new Equipo(12,"Crystal Palace","Londres","Selhurst Park",12);
+        CrystalPalace.setEntrenador(new Entrenador("Roy","Hodgson","Inglaterra",12));
+
+        CrystalPalace.getJugadores().add(new Jugador("Vicente",    "Guaita",       "España",       122, null, 1,  "C12", null, 12, Posicion.PORTERO,       84));
+        CrystalPalace.getJugadores().add(new Jugador("Joel",       "Ward",         "Inglaterra",   123, null, 2,  "C12", null, 12, Posicion.DEFENSA,       83));
+        CrystalPalace.getJugadores().add(new Jugador("Tyrick",     "Mitchell",     "Inglaterra",   124, null, 3,  "C12", null, 12, Posicion.DEFENSA,       84));
+        CrystalPalace.getJugadores().add(new Jugador("Marc",       "Guéhi",        "Costa de Marfil",125, null, 5,  "C12", null, 12, Posicion.DEFENSA,      85));
+        CrystalPalace.getJugadores().add(new Jugador("James",      "Tomkins",      "Inglaterra",   126, null, 6,  "C12", null, 12, Posicion.DEFENSA,       83));
+
+        CrystalPalace.getJugadores().add(new Jugador("Eberechi",   "Eze",          "Inglaterra",   127, null, 7,  "C12", null, 12, Posicion.CENTROCAMPISTA,86));
+        CrystalPalace.getJugadores().add(new Jugador("Conor",      "Gallagher",    "Inglaterra",   128, null, 8,  "C12", null, 12, Posicion.CENTROCAMPISTA,85));
+        CrystalPalace.getJugadores().add(new Jugador("Cheick",     "Doucouré",     "Malí",         129, null, 10, "C12", null, 12, Posicion.CENTROCAMPISTA,84));
+
+        CrystalPalace.getJugadores().add(new Jugador("Odsonne",    "Edouard",      "Francia",      130, null, 9,  "C12", null, 12, Posicion.DELANTERO,      85));
+        CrystalPalace.getJugadores().add(new Jugador("Jean-Philippe","Mateta",     "Francia",      131, null, 11, "C12", null, 12, Posicion.DELANTERO,      84));
+        CrystalPalace.getJugadores().add(new Jugador("Wilfried",   "Zaha",         "Costa de Marfil",132, null, 7,  "C12", null, 12, Posicion.DELANTERO,      86));
+
+        lista.add(CrystalPalace);
+
+
+        Equipo Fulham = new Equipo(13,"Fulham","Londres","Craven Cottage",13);
+        Fulham.setEntrenador(new Entrenador("Marco","Silva","Portugal",13));
+
+        Fulham.getJugadores().add(new Jugador("Bernd",       "Leno",         "Alemania",     133, null, 1, "F13", null, 13, Posicion.PORTERO,       85));
+        Fulham.getJugadores().add(new Jugador("Kenny",       "Tete",         "Países Bajos", 134, null, 2, "F13", null, 13, Posicion.DEFENSA,       83));
+        Fulham.getJugadores().add(new Jugador("Joachim",     "Andersson",    "Suecia",       135, null, 3, "F13", null, 13, Posicion.DEFENSA,       84));
+        Fulham.getJugadores().add(new Jugador("Tosin",       "Adarabioyo",   "Inglaterra",  136, null, 5, "F13", null, 13, Posicion.DEFENSA,       83));
+        Fulham.getJugadores().add(new Jugador("Antonee",     "Robinson",     "Inglaterra",  137, null, 6, "F13", null, 13, Posicion.DEFENSA,       84));
+
+        Fulham.getJugadores().add(new Jugador("Harrison",    "Reed",         "Inglaterra",  138, null, 8, "F13", null, 13, Posicion.CENTROCAMPISTA,85));
+        Fulham.getJugadores().add(new Jugador("Andreas",     "Pereira",      "Brasil",       139, null, 10, "F13", null, 13, Posicion.CENTROCAMPISTA,84));
+        Fulham.getJugadores().add(new Jugador("Joao",        "Palhinha",     "Portugal",     140, null, 7, "F13", null, 13, Posicion.CENTROCAMPISTA,85));
+
+        Fulham.getJugadores().add(new Jugador("Aleksandar",  "Mitrovic",     "Serbia",       141, null, 9, "F13", null, 13, Posicion.DELANTERO,      88));
+        Fulham.getJugadores().add(new Jugador("Bobby",       "Decordova-Reid","Inglaterra", 142, null, 11, "F13", null, 13, Posicion.DELANTERO,      85));
+        Fulham.getJugadores().add(new Jugador("Harry",       "Wilson",       "Gales",        143, null, 7, "F13", null, 13, Posicion.DELANTERO,      84));
+
+        lista.add(Fulham);
+
+
+        Equipo Bournemouth = new Equipo(14,"Bournemouth","Bournemouth","Vitality Stadium",14);
+        Bournemouth.setEntrenador(new Entrenador("Andoni","Etxeberria","España",14));
+
+        Bournemouth.getJugadores().add(new Jugador("Mark",       "Travers",      "Inglaterra",   144, null, 1, "B14", null, 14, Posicion.PORTERO,       84));
+        Bournemouth.getJugadores().add(new Jugador("Nathan",     "Ake",          "Países Bajos", 145, null, 2, "B14", null, 14, Posicion.DEFENSA,       84));
+        Bournemouth.getJugadores().add(new Jugador("Chris",      "Mepham",       "Gales",        146, null, 3, "B14", null, 14, Posicion.DEFENSA,       83));
+        Bournemouth.getJugadores().add(new Jugador("Jordan",     "Zagadou",      "Francia",      147, null, 5, "B14", null, 14, Posicion.DEFENSA,       84));
+        Bournemouth.getJugadores().add(new Jugador("Lloyd",      "Kelly",        "Inglaterra",   148, null, 6, "B14", null, 14, Posicion.DEFENSA,       83));
+
+        Bournemouth.getJugadores().add(new Jugador("Philip",     "Billing",      "Inglaterra",   149, null, 8, "B14", null, 14, Posicion.CENTROCAMPISTA,85));
+        Bournemouth.getJugadores().add(new Jugador("Ben",        "Brereton",     "Chile",        150, null, 10, "B14", null, 14, Posicion.CENTROCAMPISTA,84));
+        Bournemouth.getJugadores().add(new Jugador("Junior",     "Stanislas",    "Inglaterra",   151, null, 7, "B14", null, 14, Posicion.CENTROCAMPISTA,85));
+
+        Bournemouth.getJugadores().add(new Jugador("Dominic",    "Solanke",      "Inglaterra",   152, null, 9, "B14", null, 14, Posicion.DELANTERO,      86));
+        Bournemouth.getJugadores().add(new Jugador("Jaidon",     "Anthony",      "Inglaterra",   153, null, 11, "B14", null, 14, Posicion.DELANTERO,      84));
+        Bournemouth.getJugadores().add(new Jugador("Arnaut",     "Danjuma",      "Países Bajos", 154, null, 7, "B14", null, 14, Posicion.DELANTERO,      85));
+
+        lista.add(Bournemouth);
+
+
+        Equipo Nottingham = new Equipo(15,"Nottingham Forest","Nottingham","City Ground",15);
+        Nottingham.setEntrenador(new Entrenador("Steve","Cooper","Gales",15));
+
+        Nottingham.getJugadores().add(new Jugador("Brice",      "Samba",        "Francia",      155, null, 1, "N15", null, 15, Posicion.PORTERO,       84));
+        Nottingham.getJugadores().add(new Jugador("Joe",        "Worrall",      "Inglaterra",   156, null, 2, "N15", null, 15, Posicion.DEFENSA,       83));
+        Nottingham.getJugadores().add(new Jugador("Brennan",    "Johnson",      "Inglaterra",   157, null, 3, "N15", null, 15, Posicion.DEFENSA,       84));
+        Nottingham.getJugadores().add(new Jugador("Morgan",     "Gibbs-White",  "Inglaterra",   158, null, 5, "N15", null, 15, Posicion.DEFENSA,       84));
+        Nottingham.getJugadores().add(new Jugador("Johan",      "Bakasetas",    "Grecia",       159, null, 6, "N15", null, 15, Posicion.DEFENSA,       83));
+
+        Nottingham.getJugadores().add(new Jugador("Ryan",       "Yates",        "Inglaterra",   160, null, 8, "N15", null, 15, Posicion.CENTROCAMPISTA,85));
+        Nottingham.getJugadores().add(new Jugador("James",      "Brunt",        "Inglaterra",   161, null, 10, "N15", null, 15, Posicion.CENTROCAMPISTA,84));
+        Nottingham.getJugadores().add(new Jugador("Lyle",       "Taylor",       "Inglaterra",   162, null, 7, "N15", null, 15, Posicion.CENTROCAMPISTA,85));
+
+        Nottingham.getJugadores().add(new Jugador("Brennan",    "Johnson",      "Inglaterra",   163, null, 9, "N15", null, 15, Posicion.DELANTERO,      86));
+        Nottingham.getJugadores().add(new Jugador("Taiwo",      "Awoniyi",      "Nigeria",      164, null, 11, "N15", null, 15, Posicion.DELANTERO,      84));
+        Nottingham.getJugadores().add(new Jugador("Keinan",     "Davis",        "Inglaterra",   165, null, 7, "N15", null, 15, Posicion.DELANTERO,      85));
+
+        lista.add(Nottingham);
+
+        Equipo Southampton = new Equipo(16,"Southampton","Southampton","St Mary's Stadium",16);
+        Southampton.setEntrenador(new Entrenador("Russell","Martin","Escocia",16));
+
+        Southampton.getJugadores().add(new Jugador("Fraser",     "Forster",      "Inglaterra",   166, null, 1, "S16", null, 16, Posicion.PORTERO,       84));
+        Southampton.getJugadores().add(new Jugador("Ryan",       "Bertrand",     "Inglaterra",   167, null, 2, "S16", null, 16, Posicion.DEFENSA,       83));
+        Southampton.getJugadores().add(new Jugador("Jan",        "Bednarek",     "Polonia",      168, null, 3, "S16", null, 16, Posicion.DEFENSA,       84));
+        Southampton.getJugadores().add(new Jugador("Mohammed",   "Salisu",       "Ghana",        169, null, 5, "S16", null, 16, Posicion.DEFENSA,       83));
+        Southampton.getJugadores().add(new Jugador("Lyanco",     "",             "Brasil",       170, null, 6, "S16", null, 16, Posicion.DEFENSA,       84));
+
+        Southampton.getJugadores().add(new Jugador("James",      "Ward-Prowse",  "Inglaterra",   171, null, 8, "S16", null, 16, Posicion.CENTROCAMPISTA,85));
+        Southampton.getJugadores().add(new Jugador("Roméo",      "Lavia",        "Bélgica",      172, null, 10,"S16", null, 16, Posicion.CENTROCAMPISTA,84));
+        Southampton.getJugadores().add(new Jugador("Nathan",     "Redmond",      "Inglaterra",   173, null, 7, "S16", null, 16, Posicion.CENTROCAMPISTA,85));
+
+        Southampton.getJugadores().add(new Jugador("Che",        "Adams",        "Inglaterra",   174, null, 9, "S16", null, 16, Posicion.DELANTERO,      86));
+        Southampton.getJugadores().add(new Jugador("Lyanco",     "Fernando",     "Brasil",       175, null, 11,"S16", null, 16, Posicion.DELANTERO,      84));
+        Southampton.getJugadores().add(new Jugador("Adam",       "Armstrong",    "Inglaterra",   176, null, 7, "S16", null, 16, Posicion.DELANTERO,      85));
+
+        lista.add(Southampton);
+
+        return lista;
+
+
     }
 }
