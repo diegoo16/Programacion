@@ -171,6 +171,24 @@ public class Main {
         madrid.getJugadores().add(new Jugador("Kylian","Mbappé","Francia",11,LocalDate.of(1998,12,20),9,"28001",null,1,Posicion.DELANTERO));
 
         equipos.add(madrid);
+
+        Equipo barca = new Equipo(2, "Fc Barcelona", "Barcelona", "Camp Nou", 2);
+        Entrenador flick = new Entrenador("Hansi", "Flick", "Alemania", 2);
+        barca.setEntrenador(flick);
+
+        barca.getJugadores().add(new Jugador("Marc-André","ter Stegen","Alemania",12,LocalDate.of(1992,4,30),1,"08001",null,2,Posicion.PORTERO));
+        barca.getJugadores().add(new Jugador("Jules","Koundé","Francia",13,LocalDate.of(1998,11,12),23,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Ronald","Araújo","Uruguay",14,LocalDate.of(1999,3,7),4,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Pau","Cubarsí","España",15,LocalDate.of(2007,1,22),2,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Alejandro","Balde","España",16,LocalDate.of(2003,10,18),3,"08001",null,2,Posicion.DEFENSA));
+        barca.getJugadores().add(new Jugador("Frenkie","de Jong","Países Bajos",17,LocalDate.of(1997,5,12),21,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Pedri","González","España",18,LocalDate.of(2002,11,25),8,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Gavi","Páez","España",19,LocalDate.of(2004,8,5),6,"08001",null,2,Posicion.CENTROCAMPISTA));
+        barca.getJugadores().add(new Jugador("Lamine","Yamal","España",20,LocalDate.of(2007,7,13),27,"08001",null,2,Posicion.DELANTERO));
+        barca.getJugadores().add(new Jugador("Robert","Lewandowski","Polonia",21,LocalDate.of(1988,8,21),9,"08001",null,2,Posicion.DELANTERO));
+        barca.getJugadores().add(new Jugador("Raphinha","Dias","Brasil",22,LocalDate.of(1996,12,14),11,"08001",null,2,Posicion.DELANTERO));
+
+        equipos.add(barca);
         return equipos;
     }
 
