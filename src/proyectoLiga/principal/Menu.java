@@ -329,6 +329,147 @@ public class Menu {
         athletic.getJugadores().add(new Jugador("Raúl","García","España",99,null,19,"48001",null,9,Posicion.DELANTERO));
 
         lista.add(athletic);
+
+        Equipo osasuna = new Equipo(10, "CA Osasuna", "Pamplona", "El Sadar", 10);
+        osasuna.setEntrenador(new Entrenador("Alessio", "Lisci", "Italia", 10));
+
+        osasuna.getJugadores().add(new Jugador("Sergio","Herrera","España",100,null,1,"31001",null,10,Posicion.PORTERO));
+        osasuna.getJugadores().add(new Jugador("Enzo","Boyomo","Camerún",101,null,22,"31001",null,10,Posicion.DEFENSA));
+        osasuna.getJugadores().add(new Jugador("Jorge","Herrando","España",102,null,5,"31001",null,10,Posicion.DEFENSA));
+        osasuna.getJugadores().add(new Jugador("Juan","Cruz","España",103,null,3,"31001",null,10,Posicion.DEFENSA));
+        osasuna.getJugadores().add(new Jugador("David","García","España",104,null,4,"31001",null,10,Posicion.DEFENSA));
+
+        osasuna.getJugadores().add(new Jugador("Lucas","Torró","España",105,null,6,"31001",null,10,Posicion.CENTROCAMPISTA));
+        osasuna.getJugadores().add(new Jugador("Jon","Moncayola","España",106,null,7,"31001",null,10,Posicion.CENTROCAMPISTA));
+        osasuna.getJugadores().add(new Jugador("Iker","Muñoz","España",107,null,8,"31001",null,10,Posicion.CENTROCAMPISTA));
+
+        osasuna.getJugadores().add(new Jugador("Moi","Gómez","España",108,null,16,"31001",null,10,Posicion.CENTROCAMPISTA));
+        osasuna.getJugadores().add(new Jugador("Raúl","García","España",109,null,9,"31001",null,10,Posicion.DELANTERO));
+        osasuna.getJugadores().add(new Jugador("Kike","Barja","España",110,null,11,"31001",null,10,Posicion.DELANTERO));
+
+        lista.add(osasuna);
+
+
+
+        Equipo celta = new Equipo(11, "RC Celta", "Vigo", "ABANCA Balaídos", 11);
+        celta.setEntrenador(new Entrenador("Claudio", "Giráldez", "España", 11));
+
+
+        celta.getJugadores().add(new Jugador("Andrei","Radu","Rumanía",111,null,13,"36201",null,11,Posicion.PORTERO));
+        celta.getJugadores().add(new Jugador("Óscar","Mingueza","España",112,null,3,"36201",null,11,Posicion.DEFENSA));
+        celta.getJugadores().add(new Jugador("Javi","Rodríguez","España",113,null,32,"36201",null,11,Posicion.DEFENSA));
+        celta.getJugadores().add(new Jugador("Joseph","Aidoo","Ghana",114,null,15,"36201",null,11,Posicion.DEFENSA));
+        celta.getJugadores().add(new Jugador("Carlos","Domínguez","España",115,null,24,"36201",null,11,Posicion.DEFENSA));
+
+        celta.getJugadores().add(new Jugador("Sergio","Carreira","España",116,null,2,"36201",null,11,Posicion.CENTROCAMPISTA));
+        celta.getJugadores().add(new Jugador("Ilaix","Moriba","Guinea",117,null,6,"36201",null,11,Posicion.CENTROCAMPISTA));
+        celta.getJugadores().add(new Jugador("Miguel","Román","España",118,null,8,"36201",null,11,Posicion.CENTROCAMPISTA));
+
+        celta.getJugadores().add(new Jugador("Fer","López","España",119,null,11,"36201",null,11,Posicion.DELANTERO));
+        celta.getJugadores().add(new Jugador("Hugo","Álvarez","España",120,null,17,"36201",null,11,Posicion.DELANTERO));
+        celta.getJugadores().add(new Jugador("Ferran","Jutglà","España",121,null,9,"36201",null,11,Posicion.DELANTERO));
+
+        lista.add(celta);
+
+
+        Equipo rayo = new Equipo(12, "Rayo Vallecano", "Madrid", "Vallecas", 12);
+        rayo.setEntrenador(new Entrenador("Íñigo", "Pérez", "España", 12));
+
+
+        rayo.getJugadores().add(new Jugador("Dani","Cárdenas","España",122,null,1,"28001",null,12,Posicion.PORTERO));
+        rayo.getJugadores().add(new Jugador("Andrei","Rațiu","Rumanía",123,null,2,"28001",null,12,Posicion.DEFENSA));
+        rayo.getJugadores().add(new Jugador("Pep","Chavarría","España",124,null,3,"28001",null,12,Posicion.DEFENSA));
+        rayo.getJugadores().add(new Jugador("Florian","Lejeune","Francia",125,null,24,"28001",null,12,Posicion.DEFENSA));
+        rayo.getJugadores().add(new Jugador("Abdul","Mumin","Ghana",126,null,16,"28001",null,12,Posicion.DEFENSA));
+
+        rayo.getJugadores().add(new Jugador("Abdul","Mumin","Ghana",127,null,16,"28001",null,12,Posicion.DEFENSA));
+        rayo.getJugadores().add(new Jugador("Pathé","Ciss","Senegal",128,null,6,"28001",null,12,Posicion.CENTROCAMPISTA));
+        rayo.getJugadores().add(new Jugador("Pedro","Díaz","España",129,null,4,"28001",null,12,Posicion.CENTROCAMPISTA));
+
+        rayo.getJugadores().add(new Jugador("Isi","Palazón","España",130,null,7,"28001",null,12,Posicion.DELANTERO));
+        rayo.getJugadores().add(new Jugador("Óscar","Trejo","Argentina",131,null,8,"28001",null,12,Posicion.CENTROCAMPISTA));
+        rayo.getJugadores().add(new Jugador("Alemão","da Silva","Brasil",132,null,9,"28001",null,12,Posicion.DELANTERO));
+
+        lista.add(rayo);
+
+        Equipo mallorca = new Equipo(13, "RCD Mallorca", "Palma", "Son Moix", 13);
+        mallorca.setEntrenador(new Entrenador("Martín", "Demichelis", "Argentina", 13));
+
+        mallorca.getJugadores().add(new Jugador("Leo","Román","España",133,null,1,"07001",null,13,Posicion.PORTERO));
+        mallorca.getJugadores().add(new Jugador("Mateu","Jaume","España",134,null,2,"07001",null,13,Posicion.DEFENSA));
+        mallorca.getJugadores().add(new Jugador("Toni","Lato","España",135,null,3,"07001",null,13,Posicion.DEFENSA));
+        mallorca.getJugadores().add(new Jugador("Antonio","Raíllo","España",136,null,21,"07001",null,13,Posicion.DEFENSA));
+        mallorca.getJugadores().add(new Jugador("Johan","Mojica","Colombia",137,null,22,"07001",null,13,Posicion.DEFENSA));
+
+        mallorca.getJugadores().add(new Jugador("Omar","Mascarell","España",138,null,5,"07001",null,13,Posicion.CENTROCAMPISTA));
+        mallorca.getJugadores().add(new Jugador("Antonio","Sánchez","España",139,null,6,"07001",null,13,Posicion.CENTROCAMPISTA));
+        mallorca.getJugadores().add(new Jugador("Dani","Rodríguez","España",140,null,14,"07001",null,13,Posicion.CENTROCAMPISTA));
+
+        mallorca.getJugadores().add(new Jugador("Vedat","Muriqi","Kosovo",141,null,7,"07001",null,13,Posicion.DELANTERO));
+        mallorca.getJugadores().add(new Jugador("Cyle","Larin","Canadá",142,null,17,"07001",null,13,Posicion.DELANTERO));
+        mallorca.getJugadores().add(new Jugador("Abdón","Prats","España",143,null,9,"07001",null,13,Posicion.DELANTERO));
+
+        lista.add(mallorca);
+
+        Equipo alaves = new Equipo(16, "Deportivo Alavés", "Vitoria-Gasteiz", "Mendizorroza", 16);
+        alaves.setEntrenador(new Entrenador("Eduardo", "Coudet", "Argentina", 16));
+
+        alaves.getJugadores().add(new Jugador("Antonio","Sivera","España",144,null,1,"01001",null,16,Posicion.PORTERO));
+        alaves.getJugadores().add(new Jugador("Nahuel","Tenaglia","Argentina",145,null,14,"01001",null,16,Posicion.DEFENSA));
+        alaves.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",146,null,5,"01001",null,16,Posicion.DEFENSA));
+        alaves.getJugadores().add(new Jugador("Rubén","Duarte","España",147,null,3,"01001",null,16,Posicion.DEFENSA));
+        alaves.getJugadores().add(new Jugador("Andoni","Gorosabel","España",148,null,2,"01001",null,16,Posicion.DEFENSA));
+
+        alaves.getJugadores().add(new Jugador("Antonio","Blanco","España",149,null,8,"01001",null,16,Posicion.CENTROCAMPISTA));
+        alaves.getJugadores().add(new Jugador("Jon","Guridi","España",150,null,18,"01001",null,16,Posicion.CENTROCAMPISTA));
+        alaves.getJugadores().add(new Jugador("Carlos","Benavídez","Uruguay",151,null,23,"01001",null,16,Posicion.CENTROCAMPISTA));
+
+        alaves.getJugadores().add(new Jugador("Luis","Rioja","España",152,null,11,"01001",null,16,Posicion.DELANTERO));
+        alaves.getJugadores().add(new Jugador("Kike","García","España",153,null,9,"01001",null,16,Posicion.DELANTERO));
+        alaves.getJugadores().add(new Jugador("Samu","Omorodion","España",154,null,32,"01001",null,16,Posicion.DELANTERO));
+
+        lista.add(alaves);
+
+        Equipo girona = new Equipo(15, "Girona FC", "Girona", "Montilivi", 15);
+        girona.setEntrenador(new Entrenador("Míchel", "Sánchez", "España", 15)); // :contentReference[oaicite:11]{index=11}
+
+        girona.getJugadores().add(new Jugador("Paulo","Gazzaniga","Argentina",155,null,13,"17001",null,15,Posicion.PORTERO));
+        girona.getJugadores().add(new Jugador("Hugo","Rincón","España",156,null,2,"17001",null,15,Posicion.DEFENSA));
+        girona.getJugadores().add(new Jugador("Vitor","Reis","Brasil",157,null,4,"17001",null,15,Posicion.DEFENSA));
+        girona.getJugadores().add(new Jugador("Daley","Blind","Países Bajos",158,null,17,"17001",null,15,Posicion.DEFENSA));
+        girona.getJugadores().add(new Jugador("Arnau","Martínez","España",159,null,16,"17001",null,15,Posicion.DEFENSA));
+
+        girona.getJugadores().add(new Jugador("Axel","Witsel","Bélgica",160,null,6,"17001",null,15,Posicion.CENTROCAMPISTA));
+        girona.getJugadores().add(new Jugador("Fran","Beltrán","España",161,null,8,"17001",null,15,Posicion.CENTROCAMPISTA));
+        girona.getJugadores().add(new Jugador("Viktor","Tsygankov","Ucrania",162,null,11,"17001",null,15,Posicion.DELANTERO));
+
+        girona.getJugadores().add(new Jugador("Thomas","Lemar","Francia",163,null,7,"17001",null,15,Posicion.CENTROCAMPISTA));
+        girona.getJugadores().add(new Jugador("Bryan","Gil","España",164,null,10,"17001",null,15,Posicion.DELANTERO));
+        girona.getJugadores().add(new Jugador("Vladyslav","Vanat","Ucrania",165,null,9,"17001",null,15,Posicion.DELANTERO));
+
+        lista.add(girona);
+
+        Equipo getafe = new Equipo(14, "Getafe CF", "Getafe", "Coliseum", 14);
+        getafe.setEntrenador(new Entrenador("José", "Bordalás", "España", 14));
+
+
+        getafe.getJugadores().add(new Jugador("David","Soria","España",166, null, 6,"28901",null,14,Posicion.PORTERO));
+        getafe.getJugadores().add(new Jugador("Kiko","Femenía","España",167,null,2,"28901",null,14,Posicion.DEFENSA));
+        getafe.getJugadores().add(new Jugador("Domingos","Duarte","Cabo Verde",168,null,22,"28901",null,14,Posicion.DEFENSA));
+        getafe.getJugadores().add(new Jugador("Abdel","Abqar","Marruecos",169,null,4,"28901",null,14,Posicion.DEFENSA));
+        getafe.getJugadores().add(new Jugador("Djené","Dakonam","Togo",170,null,12,"28901",null,14,Posicion.DEFENSA));
+
+        getafe.getJugadores().add(new Jugador("Juan","Iglesias","España",171,null,21,"28901",null,14,Posicion.DEFENSA));
+        getafe.getJugadores().add(new Jugador("Luis","Milla","España",172,null,5,"28901",null,14,Posicion.CENTROCAMPISTA));
+        getafe.getJugadores().add(new Jugador("Mauro","Arambarri","Uruguay",173,null,8,"28901",null,14,Posicion.CENTROCAMPISTA));
+
+        getafe.getJugadores().add(new Jugador("Mario","Martín","España",174,null,6,"28901",null,14,Posicion.CENTROCAMPISTA));
+        getafe.getJugadores().add(new Jugador("Luis","Vázquez","Argentina",175,null,9,"28901",null,14,Posicion.DELANTERO));
+        getafe.getJugadores().add(new Jugador("Martín","Satriano","Uruguay",176,null,19,"28901",null,14,Posicion.DELANTERO));
+
+        lista.add(getafe);
+
+
         return lista;
     }
 }
