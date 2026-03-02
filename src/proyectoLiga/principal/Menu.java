@@ -1,6 +1,7 @@
 package proyectoLiga.principal;
 
 import proyectoLiga.competicion.Equipo;
+import proyectoLiga.competicion.Liga;
 import proyectoLiga.competicion.Posicion;
 import proyectoLiga.personas.Entrenador;
 import proyectoLiga.personas.Jugador;
@@ -13,15 +14,19 @@ import java.util.Scanner;
 public class Menu {
 
     private final Scanner sc;
-    private final List<Equipo> equipos;
+    private final Liga deluxLeague;
+    private final Liga premierleague;
+    private Liga ligaActual;
 
     public Menu() {
         this.sc = new Scanner(System.in);
-        this.equipos = crearEquipos();
+        this.deluxLeague = crearDeluxLeague();
+        this.premierleague = crearPremierLeague();
     }
 
     public void iniciar() throws InterruptedException {
         historiaIntro();
+        elegirLiga();
         menuPrincipal();
         System.out.println("Muchas gracias por ver la DELUX CHAMPIONS LEAGUE. ¡Hasta el año que viene!");
         sc.close();
@@ -45,17 +50,35 @@ public class Menu {
         Thread.sleep(tiempoEspera);
     }
 
+    private void elegirLiga() {
+        System.out.println(" ELIGE LA LIGA ");
+        System.out.println("1. " + deluxLeague.getNombre());
+        System.out.println("2. " + premierleague.getNombre());
+
+        int op = leerOpcion(1,2);
+
+        if (op == 1) ligaActual = deluxLeague;
+        else ligaActual = premierleague;
+
+        System.out.println(" Perfecto , has elegido: " + ligaActual.getNombre());
+        pausar();
+    }
+
     private void menuPrincipal() {
+        if (ligaActual == null) {
+            elegirLiga();
+        }
         int opcion;
         do {
-            System.out.println("=== MENÚ PRINCIPAL ===");
+            System.out.println("=== MENÚ PRINCIPAL (" + ligaActual.getNombre() + ") ===");
             System.out.println("1. Equipos");
             System.out.println("2. Partidos");
             System.out.println("3. Resultados");
             System.out.println("4. Clasificación");
-            System.out.println("5. Salir");
+            System.out.println("5. Cambiar liga");
+            System.out.println("6. Salir");
 
-            opcion = leerOpcion(1, 5);
+            opcion = leerOpcion(1, 6);
 
             switch (opcion) {
                 case 1:
@@ -74,16 +97,19 @@ public class Menu {
                     pausar();
                     break;
                 case 5:
-                    System.out.println("Saliendo...");
+                    elegirLiga();
                     break;
+                    case 6:
+                        System.out.println("Saliendo...");
+                        break;
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
 
     private void menuEquipos() {
         int opcion;
         do {
-            System.out.println("=== EQUIPOS ===");
+            System.out.println("=== EQUIPOS === (" + ligaActual.getNombre() + ") ===");
             System.out.println("1. Listar equipos");
             System.out.println("2. Ver detalle de un equipo");
             System.out.println("3. Volver");
@@ -106,6 +132,8 @@ public class Menu {
     }
 
     private void listarEquipos() {
+        List <Equipo> equipos = ligaActual.getEquipos();
+
         System.out.println("--- EQUIPOS DE LA LIGA ---");
         for (int i = 0; i < equipos.size(); i++) {
             System.out.println((i + 1) + ". " + equipos.get(i).getNombre());
@@ -113,6 +141,8 @@ public class Menu {
     }
 
     private void verDetalleEquipo() {
+        List <Equipo> equipos = ligaActual.getEquipos();
+
         listarEquipos();
         System.out.println("Elige el número del equipo:");
         int num = leerOpcion(1, equipos.size());
@@ -140,6 +170,7 @@ public class Menu {
             while (!sc.hasNextInt()) {
                 System.out.println("Error: escribe un número válido.");
                 sc.next();
+                System.out.println("Elige una opción: ");
             }
             opcion = sc.nextInt();
             sc.nextLine();
@@ -157,7 +188,26 @@ public class Menu {
         sc.nextLine();
     }
 
-    private List<Equipo> crearEquipos() {
+    private Liga crearDeluxLeague() {
+        Liga liga = new Liga(1, "Delux League", "España" , "2025/26");
+
+        List <Equipo> equipos = crearEquiposDelux();
+        for (Equipo e : equipos) {
+            liga.addEquipo(e);
+        }
+        return liga;
+    }
+
+    private Liga crearPremierLeague() {
+        Liga liga = new Liga (2, "Premier League (aún no esta hecho" , "Inglaterra" , "2025/26");
+
+        List <Equipo> equipos = crearEquiposDelux();
+        for (Equipo e : equipos) {
+            liga.addEquipo(e);
+        }
+        return liga;
+    }
+    private List<Equipo> crearEquiposDelux() {
         List<Equipo> lista = new ArrayList<>();
 
         Equipo madrid = new Equipo(1,"Real Madrid","Madrid","Santiago Bernabéu",1);
