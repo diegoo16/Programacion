@@ -5,9 +5,7 @@ import proyectoLiga.personas.Entrenador;
 import proyectoLiga.personas.Jugador;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Menu {
 
@@ -15,6 +13,7 @@ public class Menu {
     private final Liga deluxLeague;
     private final Liga premierleague;
     private Liga ligaActual;
+
 
     public Menu() {
         this.sc = new Scanner(System.in);
@@ -90,8 +89,7 @@ public class Menu {
                     pausar();
                     break;
                 case 4:
-                    System.out.println("Clasificación (aun no esta hecho)");
-                    pausar();
+                    menuClasificacion();
                     break;
                 case 5:
                     elegirLiga();
@@ -840,45 +838,84 @@ public class Menu {
 
     private void menuPartidos() {
 
-        if (ligaActual.getJornadas().isEmpty()) {
-            generarJornadaAleatoria();
-        }
+        System.out.println("PARTIDOS");
 
-        System.out.println(" PARTIDOS ");
+        int nEquipos = ligaActual.getEquipos().size();
+        int maxJornadas = 2 * (nEquipos - 1);
 
-        for (Jornada jornada : ligaActual.getJornadas()) {
-            System.out.println(" Jornada " + jornada.getNumero());
+        int numeroJornada = 1;
 
-            for ( Partido partido : jornada.getPartidos() ) {
-                if (!partido.isJugado()){
+        while (numeroJornada <= maxJornadas) {
+
+            if (ligaActual.getJornadas().size() < numeroJornada) {
+                generarJornadaAleatoria(numeroJornada);
+            }
+
+            Jornada jornada = ligaActual.getJornadas().get(numeroJornada - 1);
+
+            System.out.println(" Jornada " + jornada.getNumero() );
+
+            for (Partido partido : jornada.getPartidos()) {
+                if (!partido.isJugado()) {
                     partido.simularPartido();
                 }
                 System.out.println(partido);
 
-                if (partido.getMvp() != null){
-                    System.out.println("MVP: " + partido.getMvp().getNombre() + " " + partido.getMvp().getApellido());
+                if (partido.getMvp() != null) {
+                    System.out.println("MVP : " + partido.getMvp().getNombre() + " " + partido.getMvp().getApellido());
                 }
             }
+
+            if (numeroJornada == maxJornadas) break;
+
+            System.out.println(" Pulsa ENTER para ver la siguiente jornada (o escribe 0 para volver al menú)");
+            String entrada = sc.nextLine();
+            if (entrada.trim().equals("0")) return;
+
+            numeroJornada++;
         }
+
+        System.out.println(" Temporada terminada. Pulsa ENTER para volver al menú.");
+        sc.nextLine();
     }
 
 
-    private void generarJornadaAleatoria() {
-        List <Equipo> equipos = new ArrayList<>(ligaActual.getEquipos());
-        java.util.Collections.shuffle(equipos);
+    private void generarJornadaAleatoria(int numeroJornada) {
 
-        int numeroJornada = 1;
+        List<Equipo> equipos = new ArrayList<>(ligaActual.getEquipos());
+        Collections.shuffle(equipos);
+
         Jornada jornada = new Jornada(ligaActual.getIdLiga(), numeroJornada);
 
-        for (int i = 0; i < equipos.size(); i+= 2) {
+        for (int i = 0; i < equipos.size(); i += 2) {
 
             Equipo local = equipos.get(i);
-            Equipo visitante = equipos.get(i+1);
+            Equipo visitante = equipos.get(i + 1);
 
-            Partido partido = new Partido ( LocalDate.now() , local , visitante , null , ligaActual.getIdLiga() , numeroJornada);
+            Partido partido = new Partido(LocalDate.now(), local, visitante, null, ligaActual.getIdLiga(), numeroJornada);
             jornada.addPartido(partido);
-
         }
+
         ligaActual.addJornada(jornada);
+    }
+
+
+    private void menuClasificacion() {
+        List <Equipo> tabla = new ArrayList<>(ligaActual.getEquipos());
+
+        Collections.sort(tabla, new Comparator<Equipo>() {
+            @Override
+            public int compare(Equipo e1, Equipo e2) {
+                return e2.getPuntos() - e1.getPuntos();
+            }
+        });
+
+        System.out.println(" CLASIFICACIÓN "+ ligaActual.getNombre());
+
+        for (int i = 0; i < tabla.size(); i++) {
+            Equipo e = tabla.get(i);
+            System.out.println((i + 1) + e.getNombre() + " - " + e.getPuntos() + " puntos ");
+        }
+        pausar();
     }
 }

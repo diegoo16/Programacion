@@ -95,6 +95,8 @@ public class Partido {
     }
 
     public void simularPartido() {
+        if (jugado) return;
+
         int mediaLocal = equipoLocal.calcularMediaEquipo();
         int mediaVisitante = equipoVisitante.calcularMediaEquipo();
 
@@ -115,6 +117,8 @@ public class Partido {
         }
         calcularMVP();
         this.jugado = true;
+        aplicarResultadoEnClasificacion();
+        jugado = true;
     }
 
     private void calcularMVP() {
@@ -154,6 +158,40 @@ public class Partido {
             }
         }
         mvp = mejor;
+    }
+
+    public void aplicarResultadoEnClasificacion(){
+
+        equipoLocal.setPartidosJugados(equipoLocal.getPartidosJugados()+1);
+        equipoVisitante.setPartidosJugados(equipoVisitante.getPartidosJugados()+1);
+
+        equipoLocal.setGolesAFavor(equipoLocal.getGolesAFavor() + golesLocal);
+        equipoLocal.setGolesEnContra(equipoLocal.getGolesEnContra() + golesVisitante);
+
+        equipoVisitante.setGolesAFavor(equipoVisitante.getGolesAFavor() + golesVisitante);
+        equipoVisitante.setGolesEnContra(equipoVisitante.getGolesEnContra() + golesLocal);
+
+        if (golesLocal > golesVisitante) {
+
+            equipoLocal.setPartidosGanados(equipoLocal.getPartidosGanados() + 1);
+            equipoVisitante.setPartidosPerdidos(equipoVisitante.getPartidosPerdidos() + 1);
+
+            equipoLocal.setPuntos(equipoLocal.getPuntos() + 3);
+        } else if (golesVisitante > golesLocal) {
+
+            equipoVisitante.setPartidosGanados(equipoVisitante.getPartidosGanados() + 1);
+            equipoLocal.setPartidosPerdidos(equipoLocal.getPartidosPerdidos() + 1);
+
+            equipoVisitante.setPuntos(equipoVisitante.getPuntos() + 3);
+
+        } else {
+
+            equipoLocal.setPartidosEmpatados(equipoLocal.getPartidosEmpatados() + 1);
+            equipoVisitante.setPartidosEmpatados(equipoVisitante.getPartidosEmpatados() + 1);
+
+            equipoLocal.setPuntos(equipoLocal.getPuntos() + 1);
+            equipoVisitante.setPuntos(equipoVisitante.getPuntos() + 1);
+        }
     }
 
     @Override

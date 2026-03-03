@@ -15,6 +15,13 @@ public class Equipo {
     private int idEntrenador;
     private Entrenador entrenador;
     private List<Jugador> jugadores;
+    private int puntos;
+    private int partidosJugados;
+    private int partidosGanados;
+    private int partidosEmpatados;
+    private int partidosPerdidos;
+    private int golesAFavor;
+    private int golesEnContra;
 
 
     public Equipo(int idEquipo, String nombre, String ciudad, String estadio, int idEntrenador) {
@@ -26,6 +33,7 @@ public class Equipo {
 
         this.jugadores = new ArrayList<>();
     }
+
 
 
     public int getIdEquipo() {
@@ -54,6 +62,62 @@ public class Equipo {
 
     public List<Jugador> getJugadores() {
         return jugadores;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public int  getPartidosJugados() {
+        return partidosJugados;
+    }
+
+    public int getPartidosGanados() {
+        return partidosGanados;
+    }
+
+    public int getPartidosEmpatados() {
+        return partidosEmpatados;
+    }
+
+    public int getPartidosPerdidos() {
+        return partidosPerdidos;
+    }
+
+    public int getGolesAFavor() {
+        return golesAFavor;
+    }
+
+    public int getGolesEnContra() {
+        return golesEnContra;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public void setPartidosJugados(int partidosJugados) {
+        this.partidosJugados = partidosJugados;
+    }
+
+    public void setPartidosGanados(int partidosGanados) {
+        this.partidosGanados = partidosGanados;
+    }
+
+    public void setPartidosEmpatados(int partidosEmpatados) {
+        this.partidosEmpatados = partidosEmpatados;
+    }
+
+    public void setPartidosPerdidos(int partidosPerdidos) {
+        this.partidosPerdidos = partidosPerdidos;
+    }
+
+    public void setGolesAFavor(int golesAFavor) {
+        this.golesAFavor = golesAFavor;
+    }
+
+    public void setGolesEnContra(int golesEnContra) {
+        this.golesEnContra = golesEnContra;
     }
 
     public void setNombre(String nombre) {
@@ -88,6 +152,17 @@ public class Equipo {
             suma+=j.getMedia();
         }
         return suma;
+    }
+
+
+    public void resetEstadisticas() {
+        puntos = 0;
+        partidosJugados = 0;
+        partidosGanados = 0;
+        partidosEmpatados = 0;
+        partidosPerdidos = 0;
+        golesAFavor = 0;
+        golesEnContra = 0;
     }
 
     @Override
