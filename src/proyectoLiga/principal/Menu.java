@@ -13,12 +13,14 @@ public class Menu {
     private final Liga deluxLeague;
     private final Liga premierleague;
     private Liga ligaActual;
+    private final Liga ligueOne;
 
 
     public Menu() {
         this.sc = new Scanner(System.in);
         this.deluxLeague = crearDeluxLeague();
         this.premierleague = crearPremierLeague();
+        this.ligueOne = crearLigueOne();
     }
 
     public void iniciar() throws InterruptedException {
@@ -51,11 +53,13 @@ public class Menu {
         System.out.println(" ELIGE LA LIGA ");
         System.out.println("1. " + deluxLeague.getNombre());
         System.out.println("2. " + premierleague.getNombre());
+        System.out.println("3. " + ligueOne.getNombre());
 
-        int op = leerOpcion(1,2);
+        int op = leerOpcion(1,3);
 
         if (op == 1) ligaActual = deluxLeague;
-        else ligaActual = premierleague;
+        if (op == 2) ligaActual = premierleague;
+        else ligaActual = ligueOne;
 
         System.out.println(" Perfecto , has elegido: " + ligaActual.getNombre());
         pausar();
@@ -202,6 +206,17 @@ public class Menu {
         }
         return liga;
     }
+
+    private Liga crearLigueOne() {
+        Liga liga = new Liga (3, "LigueOne " , "Francia" , "2025/26");
+
+        List <Equipo> equipos = crearEquiposLigueOne();
+        for (Equipo e : equipos) {
+            liga.addEquipo(e);
+        }
+        return liga;
+    }
+
     private List<Equipo> crearEquiposDelux() {
         List<Equipo> lista = new ArrayList<>();
 
@@ -835,6 +850,332 @@ public class Menu {
 
 
     }
+    private List<Equipo> crearEquiposLigueOne() {
+        List<Equipo> lista = new ArrayList<>();
+
+        Equipo PSG = new Equipo(1, "Paris Saint-Germain", "Paris", "Parc des Princes", 1);
+        PSG.setEntrenador(new Entrenador("Luis", "Enrique", "España", 1));
+
+        PSG.getJugadores().add(new Jugador("Gianluigi", "Donnarumma", "Italia",        177, null,  1, "75016", null, 1, Posicion.PORTERO,        89));
+
+        PSG.getJugadores().add(new Jugador("Achraf",    "Hakimi",     "Marruecos",     178, null,  2, "75016", null, 1, Posicion.DEFENSA,        86));
+        PSG.getJugadores().add(new Jugador("Milan",     "Skriniar",   "Eslovaquia",    179, null, 37, "75016", null, 1, Posicion.DEFENSA,        86));
+        PSG.getJugadores().add(new Jugador("Marquinhos","Correa",     "Brasil",        180, null,  5, "75016", null, 1, Posicion.DEFENSA,        87));
+        PSG.getJugadores().add(new Jugador("Lucas",     "Hernandez",  "Francia",       181, null, 21, "75016", null, 1, Posicion.DEFENSA,        85));
+
+        PSG.getJugadores().add(new Jugador("Vitinha",   "Ferreira",   "Portugal",      182, null, 17, "75016", null, 1, Posicion.CENTROCAMPISTA, 85));
+        PSG.getJugadores().add(new Jugador("Manuel",    "Ugarte",     "Uruguay",       183, null,  4, "75016", null, 1, Posicion.CENTROCAMPISTA, 84));
+        PSG.getJugadores().add(new Jugador("Warren",    "Zaire-Emery","Francia",       184, null, 33, "75016", null, 1, Posicion.CENTROCAMPISTA, 84));
+
+        PSG.getJugadores().add(new Jugador("Ousmane",   "Dembele",    "Francia",       185, null, 10, "75016", null, 1, Posicion.DELANTERO,      86));
+        PSG.getJugadores().add(new Jugador("Goncalo",   "Ramos",      "Portugal",      186, null,  9, "75016", null, 1, Posicion.DELANTERO,      84));
+        PSG.getJugadores().add(new Jugador("Bradley",   "Barcola",    "Francia",       187, null, 29, "75016", null, 1, Posicion.DELANTERO,      84));
+
+        lista.add(PSG);
+
+        Equipo Monaco = new Equipo(2, "AS Monaco", "Monaco", "Stade Louis II", 2);
+        Monaco.setEntrenador(new Entrenador("Adi", "Hutter", "Austria", 2));
+
+        Monaco.getJugadores().add(new Jugador("Philipp", "Kohn",       "Suiza",      188, null, 16, "98000", null, 2, Posicion.PORTERO,        83));
+
+        Monaco.getJugadores().add(new Jugador("Vanderson","Oliveira",  "Brasil",     189, null,  2, "98000", null, 2, Posicion.DEFENSA,        83));
+        Monaco.getJugadores().add(new Jugador("Guillermo","Maripan",   "Chile",      190, null,  3, "98000", null, 2, Posicion.DEFENSA,        84));
+        Monaco.getJugadores().add(new Jugador("Thilo",    "Kehrer",    "Alemania",   191, null,  5, "98000", null, 2, Posicion.DEFENSA,        83));
+        Monaco.getJugadores().add(new Jugador("Caio",     "Henrique",  "Brasil",     192, null, 12, "98000", null, 2, Posicion.DEFENSA,        84));
+
+        Monaco.getJugadores().add(new Jugador("Youssouf", "Fofana",    "Francia",    193, null, 19, "98000", null, 2, Posicion.CENTROCAMPISTA, 85));
+        Monaco.getJugadores().add(new Jugador("Denis",    "Zakaria",   "Suiza",      194, null,  6, "98000", null, 2, Posicion.CENTROCAMPISTA, 84));
+        Monaco.getJugadores().add(new Jugador("Aleksandr","Golovin",   "Rusia",      195, null, 17, "98000", null, 2, Posicion.CENTROCAMPISTA, 84));
+
+        Monaco.getJugadores().add(new Jugador("Takumi",   "Minamino",  "Japon",      196, null, 18, "98000", null, 2, Posicion.DELANTERO,      83));
+        Monaco.getJugadores().add(new Jugador("Wissam",   "Ben Yedder","Francia",    197, null, 10, "98000", null, 2, Posicion.DELANTERO,      85));
+        Monaco.getJugadores().add(new Jugador("Folarin",  "Balogun",   "EEUU",       198, null, 29, "98000", null, 2, Posicion.DELANTERO,      84));
+
+        lista.add(Monaco);
+
+        Equipo Marseille = new Equipo(3, "Olympique Marseille", "Marseille", "Orange Velodrome", 3);
+        Marseille.setEntrenador(new Entrenador("Jean-Louis", "Gasset", "Francia", 3));
+
+        Marseille.getJugadores().add(new Jugador("Pau",      "Lopez",      "España",    199, null, 16, "13008", null, 3, Posicion.PORTERO,        84));
+
+        Marseille.getJugadores().add(new Jugador("Jonathan", "Clauss",     "Francia",   200, null,  7, "13008", null, 3, Posicion.DEFENSA,        84));
+        Marseille.getJugadores().add(new Jugador("Chancel",  "Mbemba",     "RD Congo",  201, null, 99, "13008", null, 3, Posicion.DEFENSA,        84));
+        Marseille.getJugadores().add(new Jugador("Leonardo", "Balerdi",    "Argentina", 202, null,  5, "13008", null, 3, Posicion.DEFENSA,        83));
+        Marseille.getJugadores().add(new Jugador("Quentin",  "Merlin",     "Francia",   203, null,  3, "13008", null, 3, Posicion.DEFENSA,        83));
+
+        Marseille.getJugadores().add(new Jugador("Jordan",   "Veretout",   "Francia",   204, null, 27, "13008", null, 3, Posicion.CENTROCAMPISTA, 84));
+        Marseille.getJugadores().add(new Jugador("Geoffrey", "Kondogbia",  "R. Centroafricana",205,null,19,"13008",null,3,Posicion.CENTROCAMPISTA,84));
+        Marseille.getJugadores().add(new Jugador("Amine",    "Harit",      "Marruecos", 206, null, 11, "13008", null, 3, Posicion.CENTROCAMPISTA, 83));
+
+        Marseille.getJugadores().add(new Jugador("Ismaila",  "Sarr",       "Senegal",   207, null, 23, "13008", null, 3, Posicion.DELANTERO,      84));
+        Marseille.getJugadores().add(new Jugador("Pierre",   "Aubameyang", "Gabon",     208, null, 10, "13008", null, 3, Posicion.DELANTERO,      85));
+        Marseille.getJugadores().add(new Jugador("Iliman",   "Ndiaye",     "Senegal",   209, null, 29, "13008", null, 3, Posicion.DELANTERO,      83));
+
+        lista.add(Marseille);
+
+        Equipo Lille = new Equipo(4, "LOSC Lille", "Lille", "Stade Pierre-Mauroy", 4);
+        Lille.setEntrenador(new Entrenador("Paulo", "Fonseca", "Portugal", 4));
+
+        Lille.getJugadores().add(new Jugador("Lucas",   "Chevalier", "Francia", 210, null, 30, "59000", null, 4, Posicion.PORTERO,        83));
+
+        Lille.getJugadores().add(new Jugador("Tiago",   "Santos",    "Portugal",211, null, 22, "59000", null, 4, Posicion.DEFENSA,        82));
+        Lille.getJugadores().add(new Jugador("Leny",    "Yoro",      "Francia", 212, null, 15, "59000", null, 4, Posicion.DEFENSA,        84));
+        Lille.getJugadores().add(new Jugador("Alexsandro","Ribeiro", "Brasil",  213, null,  4, "59000", null, 4, Posicion.DEFENSA,        83));
+        Lille.getJugadores().add(new Jugador("Ismaily", "Goncalves", "Brasil",  214, null, 31, "59000", null, 4, Posicion.DEFENSA,        83));
+
+        Lille.getJugadores().add(new Jugador("Benjamin","Andre",     "Francia", 215, null, 21, "59000", null, 4, Posicion.CENTROCAMPISTA, 84));
+        Lille.getJugadores().add(new Jugador("Angel",   "Gomes",     "Inglaterra",216,null, 8,"59000",null,4,Posicion.CENTROCAMPISTA,83));
+        Lille.getJugadores().add(new Jugador("Remy",    "Cabella",   "Francia", 217, null,10,"59000",null,4,Posicion.CENTROCAMPISTA,83));
+
+        Lille.getJugadores().add(new Jugador("Edon",    "Zhegrova",  "Kosovo",  218, null,23,"59000",null,4,Posicion.DELANTERO,84));
+        Lille.getJugadores().add(new Jugador("Jonathan","David",     "Canada",  219, null, 9,"59000",null,4,Posicion.DELANTERO,85));
+        Lille.getJugadores().add(new Jugador("Ivan",    "Cavaleiro", "Portugal",220,null,17,"59000",null,4,Posicion.DELANTERO,82));
+
+        lista.add(Lille);
+
+        Equipo Lyon = new Equipo(5, "Olympique Lyonnais", "Lyon", "Groupama Stadium", 5);
+        Lyon.setEntrenador(new Entrenador("Pierre", "Sage", "Francia", 5));
+
+        Lyon.getJugadores().add(new Jugador("Anthony","Lopes","Portugal",221,null,1,"69150",null,5,Posicion.PORTERO,83));
+
+        Lyon.getJugadores().add(new Jugador("Clinton","Mata","Angola",222,null,22,"69150",null,5,Posicion.DEFENSA,82));
+        Lyon.getJugadores().add(new Jugador("Jake",   "OBrien","Irlanda",223,null,12,"69150",null,5,Posicion.DEFENSA,83));
+        Lyon.getJugadores().add(new Jugador("Duje",   "Caleta-Car","Croacia",224,null,55,"69150",null,5,Posicion.DEFENSA,83));
+        Lyon.getJugadores().add(new Jugador("Nicolas","Tagliafico","Argentina",225,null,3,"69150",null,5,Posicion.DEFENSA,84));
+
+        Lyon.getJugadores().add(new Jugador("Maxence","Caqueret","Francia",226,null,6,"69150",null,5,Posicion.CENTROCAMPISTA,84));
+        Lyon.getJugadores().add(new Jugador("Corentin","Tolisso","Francia",227,null,8,"69150",null,5,Posicion.CENTROCAMPISTA,84));
+        Lyon.getJugadores().add(new Jugador("Rayan","Cherki","Francia",228,null,18,"69150",null,5,Posicion.CENTROCAMPISTA,85));
+
+        Lyon.getJugadores().add(new Jugador("Ernest","Nuamah","Ghana",229,null,37,"69150",null,5,Posicion.DELANTERO,83));
+        Lyon.getJugadores().add(new Jugador("Alexandre","Lacazette","Francia",230,null,10,"69150",null,5,Posicion.DELANTERO,85));
+        Lyon.getJugadores().add(new Jugador("Malick","Fofana","Belgica",231,null,11,"69150",null,5,Posicion.DELANTERO,82));
+
+        lista.add(Lyon);
+
+        Equipo Nice = new Equipo(6, "OGC Nice", "Nice", "Allianz Riviera", 6);
+        Nice.setEntrenador(new Entrenador("Francesco", "Farioli", "Italia", 6));
+
+        Nice.getJugadores().add(new Jugador("Marcin",   "Bulka",     "Polonia", 232, null, 1,  "06000", null, 6, Posicion.PORTERO,        84));
+
+        Nice.getJugadores().add(new Jugador("Jordan",   "Lotomba",   "Suiza",   233, null, 23, "06000", null, 6, Posicion.DEFENSA,        83));
+        Nice.getJugadores().add(new Jugador("Jean-Clair","Todibo",   "Francia", 234, null, 6,  "06000", null, 6, Posicion.DEFENSA,        85));
+        Nice.getJugadores().add(new Jugador("Dante",    "Bonfim",    "Brasil",  235, null, 4,  "06000", null, 6, Posicion.DEFENSA,        83));
+        Nice.getJugadores().add(new Jugador("Melvin",   "Bard",      "Francia", 236, null, 26, "06000", null, 6, Posicion.DEFENSA,        83));
+
+        Nice.getJugadores().add(new Jugador("Khephren", "Thuram",    "Francia", 237, null, 19, "06000", null, 6, Posicion.CENTROCAMPISTA, 85));
+        Nice.getJugadores().add(new Jugador("Morgan",   "Sanson",    "Francia", 238, null, 11, "06000", null, 6, Posicion.CENTROCAMPISTA, 83));
+        Nice.getJugadores().add(new Jugador("Hicham",   "Boudaoui",  "Argelia", 239, null, 28, "06000", null, 6, Posicion.CENTROCAMPISTA, 84));
+
+        Nice.getJugadores().add(new Jugador("Jeremie",  "Boga",      "Costa Marfil",240,null,7,"06000",null,6,Posicion.DELANTERO,84));
+        Nice.getJugadores().add(new Jugador("Terem",    "Moffi",     "Nigeria", 241, null, 9,  "06000", null, 6, Posicion.DELANTERO,      84));
+        Nice.getJugadores().add(new Jugador("Gaetan",   "Laborde",   "Francia", 242, null,24,  "06000", null, 6, Posicion.DELANTERO,      84));
+
+        lista.add(Nice);
+
+        Equipo Lens = new Equipo(7, "RC Lens", "Lens", "Stade Bollaert-Delelis", 7);
+        Lens.setEntrenador(new Entrenador("Franck", "Haise", "Francia", 7));
+
+        Lens.getJugadores().add(new Jugador("Brice",     "Samba",        "Francia",     243, null, 30, "62300", null, 7, Posicion.PORTERO,        85));
+
+        Lens.getJugadores().add(new Jugador("Jonathan",  "Gradit",       "Francia",     244, null, 24, "62300", null, 7, Posicion.DEFENSA,        84));
+        Lens.getJugadores().add(new Jugador("Kevin",     "Danso",        "Austria",     245, null,  4, "62300", null, 7, Posicion.DEFENSA,        85));
+        Lens.getJugadores().add(new Jugador("Facundo",   "Medina",       "Argentina",   246, null, 14, "62300", null, 7, Posicion.DEFENSA,        84));
+        Lens.getJugadores().add(new Jugador("Deiver",    "Machado",      "Colombia",    247, null,  3, "62300", null, 7, Posicion.DEFENSA,        83));
+
+        Lens.getJugadores().add(new Jugador("Salis",     "Abdul Samed",  "Ghana",       248, null,  6, "62300", null, 7, Posicion.CENTROCAMPISTA, 83));
+        Lens.getJugadores().add(new Jugador("Neil",      "El Aynaoui",   "Marruecos",   249, null, 23, "62300", null, 7, Posicion.CENTROCAMPISTA, 83));
+        Lens.getJugadores().add(new Jugador("Angelo",    "Fulgini",      "Francia",     250, null, 11, "62300", null, 7, Posicion.CENTROCAMPISTA, 83));
+
+        Lens.getJugadores().add(new Jugador("Florian",   "Sotoca",       "Francia",     251, null,  7, "62300", null, 7, Posicion.DELANTERO,      84));
+        Lens.getJugadores().add(new Jugador("Elye",      "Wahi",         "Francia",     252, null,  9, "62300", null, 7, Posicion.DELANTERO,      84));
+        Lens.getJugadores().add(new Jugador("Adrien",    "Thomasson",    "Francia",     253, null, 28, "62300", null, 7, Posicion.DELANTERO,      83));
+
+        lista.add(Lens);
+
+        Equipo Rennes = new Equipo(8, "Stade Rennais", "Rennes", "Roazhon Park", 8);
+        Rennes.setEntrenador(new Entrenador("Julien", "Stephan", "Francia", 8));
+
+        Rennes.getJugadores().add(new Jugador("Steve",     "Mandanda",     "Francia", 254, null, 30, "35000", null, 8, Posicion.PORTERO,        83));
+
+        Rennes.getJugadores().add(new Jugador("Guela",     "Doue",         "Francia", 255, null, 17, "35000", null, 8, Posicion.DEFENSA,        82));
+        Rennes.getJugadores().add(new Jugador("Arthur",    "Theate",       "Belgica", 256, null,  5, "35000", null, 8, Posicion.DEFENSA,        84));
+        Rennes.getJugadores().add(new Jugador("Christopher","Wooh",        "Francia", 257, null,  4, "35000", null, 8, Posicion.DEFENSA,        83));
+        Rennes.getJugadores().add(new Jugador("Adrien",    "Truffert",     "Francia", 258, null,  3, "35000", null, 8, Posicion.DEFENSA,        84));
+
+        Rennes.getJugadores().add(new Jugador("Benjamin",  "Bourigeaud",   "Francia", 259, null, 14, "35000", null, 8, Posicion.CENTROCAMPISTA, 85));
+        Rennes.getJugadores().add(new Jugador("Enzo",      "Le Fee",       "Francia", 260, null, 28, "35000", null, 8, Posicion.CENTROCAMPISTA, 84));
+        Rennes.getJugadores().add(new Jugador("Ludovic",   "Blas",         "Francia", 261, null, 10, "35000", null, 8, Posicion.CENTROCAMPISTA, 84));
+
+        Rennes.getJugadores().add(new Jugador("Amine",     "Gouiri",       "Francia", 262, null,  9, "35000", null, 8, Posicion.DELANTERO,      84));
+        Rennes.getJugadores().add(new Jugador("Arnaud",    "Kalimuendo",   "Francia", 263, null,  7, "35000", null, 8, Posicion.DELANTERO,      83));
+        Rennes.getJugadores().add(new Jugador("Martin",    "Terrier",      "Francia", 264, null, 21, "35000", null, 8, Posicion.DELANTERO,      85));
+
+        lista.add(Rennes);
+
+        Equipo Strasbourg = new Equipo(9, "RC Strasbourg", "Strasbourg", "Stade de la Meinau", 9);
+        Strasbourg.setEntrenador(new Entrenador("Patrick", "Vieira", "Francia", 9));
+
+        Strasbourg.getJugadores().add(new Jugador("Matz",      "Sels",      "Belgica",        265, null,  1, "67000", null, 9, Posicion.PORTERO,        83));
+
+        Strasbourg.getJugadores().add(new Jugador("Frederic",  "Guilbert",  "Francia",        266, null,  2, "67000", null, 9, Posicion.DEFENSA,        82));
+        Strasbourg.getJugadores().add(new Jugador("Lucas",     "Perrin",    "Francia",        267, null,  5, "67000", null, 9, Posicion.DEFENSA,        82));
+        Strasbourg.getJugadores().add(new Jugador("Gerzino",   "Nyamsi",    "Francia",        268, null, 22, "67000", null, 9, Posicion.DEFENSA,        83));
+        Strasbourg.getJugadores().add(new Jugador("Thomas",    "Delaine",   "Francia",        269, null,  3, "67000", null, 9, Posicion.DEFENSA,        82));
+
+        Strasbourg.getJugadores().add(new Jugador("Ibrahima",  "Sissoko",   "Mali",           270, null, 27, "67000", null, 9, Posicion.CENTROCAMPISTA, 83));
+        Strasbourg.getJugadores().add(new Jugador("Habib",     "Diarra",    "Senegal",        271, null, 19, "67000", null, 9, Posicion.CENTROCAMPISTA, 83));
+        Strasbourg.getJugadores().add(new Jugador("Dion",      "Sahi",      "Costa Marfil",   272, null, 10, "67000", null, 9, Posicion.CENTROCAMPISTA, 82));
+
+        Strasbourg.getJugadores().add(new Jugador("Emanuel",   "Emegha",    "Paises Bajos",   273, null,  9, "67000", null, 9, Posicion.DELANTERO,      83));
+        Strasbourg.getJugadores().add(new Jugador("Kevin",     "Gameiro",   "Francia",        274, null, 11, "67000", null, 9, Posicion.DELANTERO,      83));
+        Strasbourg.getJugadores().add(new Jugador("Dilane",    "Bakva",     "Francia",        275, null, 26, "67000", null, 9, Posicion.DELANTERO,      82));
+
+        lista.add(Strasbourg);
+
+        Equipo Toulouse = new Equipo(10, "Toulouse FC", "Toulouse", "Stadium de Toulouse", 10);
+        Toulouse.setEntrenador(new Entrenador("Carles", "Martinez", "España", 10));
+
+        Toulouse.getJugadores().add(new Jugador("Guillaume", "Restes",     "Francia",      276, null, 50, "31000", null, 10, Posicion.PORTERO,        83));
+
+        Toulouse.getJugadores().add(new Jugador("Mikkel",    "Desler",     "Dinamarca",    277, null,  3, "31000", null, 10, Posicion.DEFENSA,        82));
+        Toulouse.getJugadores().add(new Jugador("Rasmus",    "Nicolaisen", "Dinamarca",    278, null,  2, "31000", null, 10, Posicion.DEFENSA,        83));
+        Toulouse.getJugadores().add(new Jugador("Logan",     "Costa",      "Cabo Verde",   279, null,  4, "31000", null, 10, Posicion.DEFENSA,        83));
+        Toulouse.getJugadores().add(new Jugador("Gabriel",   "Suazo",      "Chile",        280, null, 17, "31000", null, 10, Posicion.DEFENSA,        83));
+
+        Toulouse.getJugadores().add(new Jugador("Vincent",   "Sierro",     "Suiza",        281, null,  8, "31000", null, 10, Posicion.CENTROCAMPISTA, 83));
+        Toulouse.getJugadores().add(new Jugador("Cristian",  "Casseres",   "Venezuela",    282, null, 23, "31000", null, 10, Posicion.CENTROCAMPISTA, 83));
+        Toulouse.getJugadores().add(new Jugador("Denis",     "Genreau",    "Australia",    283, null,  5, "31000", null, 10, Posicion.CENTROCAMPISTA, 82));
+
+        Toulouse.getJugadores().add(new Jugador("Zakaria",   "Aboukhlal",  "Marruecos",    284, null,  7, "31000", null, 10, Posicion.DELANTERO,      84));
+        Toulouse.getJugadores().add(new Jugador("Thijs",     "Dallinga",   "Paises Bajos", 285, null,  9, "31000", null, 10, Posicion.DELANTERO,      84));
+        Toulouse.getJugadores().add(new Jugador("Frank",     "Magri",      "Camerun",      286, null, 19, "31000", null, 10, Posicion.DELANTERO,      82));
+
+        lista.add(Toulouse);
+
+        Equipo Montpellier = new Equipo(11, "Montpellier HSC", "Montpellier", "Stade de la Mosson", 11);
+        Montpellier.setEntrenador(new Entrenador("Michel", "Der Zakarian", "Francia", 11));
+
+        Montpellier.getJugadores().add(new Jugador("Benjamin", "Lecomte",   "Francia",    287, null, 40, "34000", null, 11, Posicion.PORTERO,        83));
+
+        Montpellier.getJugadores().add(new Jugador("Falaye",   "Sacko",     "Mali",       288, null, 77, "34000", null, 11, Posicion.DEFENSA,        82));
+        Montpellier.getJugadores().add(new Jugador("Boubakar", "Kouyate",   "Mali",       289, null,  4, "34000", null, 11, Posicion.DEFENSA,        83));
+        Montpellier.getJugadores().add(new Jugador("Christopher","Jullien", "Francia",    290, null,  6, "34000", null, 11, Posicion.DEFENSA,        82));
+        Montpellier.getJugadores().add(new Jugador("Issiaga",  "Sylla",     "Guinea",     291, null,  3, "34000", null, 11, Posicion.DEFENSA,        82));
+
+        Montpellier.getJugadores().add(new Jugador("Jordan",   "Ferri",     "Francia",    292, null, 12, "34000", null, 11, Posicion.CENTROCAMPISTA, 83));
+        Montpellier.getJugadores().add(new Jugador("Joris",    "Chotard",   "Francia",    293, null, 13, "34000", null, 11, Posicion.CENTROCAMPISTA, 82));
+        Montpellier.getJugadores().add(new Jugador("Téji",     "Savanier",  "Francia",    294, null, 11, "34000", null, 11, Posicion.CENTROCAMPISTA, 84));
+
+        Montpellier.getJugadores().add(new Jugador("Akor",     "Adams",     "Nigeria",    295, null,  8, "34000", null, 11, Posicion.DELANTERO,      83));
+        Montpellier.getJugadores().add(new Jugador("Arnaud",   "Nordin",    "Francia",    296, null,  7, "34000", null, 11, Posicion.DELANTERO,      82));
+        Montpellier.getJugadores().add(new Jugador("Mousa",    "Tamari",    "Jordania",   297, null, 10, "34000", null, 11, Posicion.DELANTERO,      83));
+
+        lista.add(Montpellier);
+
+        Equipo Reims = new Equipo(12, "Stade de Reims", "Reims", "Stade Auguste-Delaune", 12);
+        Reims.setEntrenador(new Entrenador("Will", "Still", "Belgica", 12));
+
+        Reims.getJugadores().add(new Jugador("Yehvann", "Diouf",       "Senegal",     298, null, 94, "51100", null, 12, Posicion.PORTERO,        83));
+
+        Reims.getJugadores().add(new Jugador("Thomas",  "Foket",       "Belgica",     299, null, 32, "51100", null, 12, Posicion.DEFENSA,        82));
+        Reims.getJugadores().add(new Jugador("Yunis",   "Abdelhamid",  "Marruecos",   300, null,  5, "51100", null, 12, Posicion.DEFENSA,        83));
+        Reims.getJugadores().add(new Jugador("Emmanuel","Agbadou",     "Costa Marfil",301, null, 24, "51100", null, 12, Posicion.DEFENSA,        83));
+        Reims.getJugadores().add(new Jugador("Thibault","De Smet",     "Belgica",     302, null, 25, "51100", null, 12, Posicion.DEFENSA,        82));
+
+        Reims.getJugadores().add(new Jugador("Marshall","Munetsi",     "Zimbabue",    303, null, 15, "51100", null, 12, Posicion.CENTROCAMPISTA, 83));
+        Reims.getJugadores().add(new Jugador("Azor",    "Matusiwa",    "Paises Bajos",304, null,  8, "51100", null, 12, Posicion.CENTROCAMPISTA, 83));
+        Reims.getJugadores().add(new Jugador("Teddy",   "Teuma",       "Malta",       305, null, 10, "51100", null, 12, Posicion.CENTROCAMPISTA, 83));
+
+        Reims.getJugadores().add(new Jugador("Junya",   "Ito",         "Japon",       306, null,  7, "51100", null, 12, Posicion.DELANTERO,      84));
+        Reims.getJugadores().add(new Jugador("Oumar",   "Diakite",     "Costa Marfil",307, null, 22, "51100", null, 12, Posicion.DELANTERO,      82));
+        Reims.getJugadores().add(new Jugador("Keito",   "Nakamura",    "Japon",       308, null, 17, "51100", null, 12, Posicion.DELANTERO,      83));
+
+        lista.add(Reims);
+
+        Equipo Metz = new Equipo(13, "FC Metz", "Metz", "Stade Saint-Symphorien", 13);
+        Metz.setEntrenador(new Entrenador("Laszlo", "Boloni", "Rumania", 13));
+
+        Metz.getJugadores().add(new Jugador("Alexandre","Oukidja",  "Argelia",     309, null, 16, "57000", null, 13, Posicion.PORTERO,        82));
+
+        Metz.getJugadores().add(new Jugador("Maxime",   "Colin",    "Francia",     310, null,  2, "57000", null, 13, Posicion.DEFENSA,        82));
+        Metz.getJugadores().add(new Jugador("Ismael",   "Traore",   "Costa Marfil",311, null,  8, "57000", null, 13, Posicion.DEFENSA,        82));
+        Metz.getJugadores().add(new Jugador("Fali",     "Cande",    "Guinea-Bissau",312, null,  5, "57000", null, 13, Posicion.DEFENSA,        82));
+        Metz.getJugadores().add(new Jugador("Matthieu", "Udol",     "Francia",     313, null,  3, "57000", null, 13, Posicion.DEFENSA,        83));
+
+        Metz.getJugadores().add(new Jugador("Lamine",   "Camara",   "Senegal",     314, null, 18, "57000", null, 13, Posicion.CENTROCAMPISTA, 83));
+        Metz.getJugadores().add(new Jugador("Danley",   "Jean Jacques","Haiti",    315, null, 27, "57000", null, 13, Posicion.CENTROCAMPISTA, 82));
+        Metz.getJugadores().add(new Jugador("Kevin",    "N'Doram",  "Francia",     316, null,  6, "57000", null, 13, Posicion.CENTROCAMPISTA, 82));
+
+        Metz.getJugadores().add(new Jugador("Ablie",    "Jallow",   "Gambia",      317, null, 36, "57000", null, 13, Posicion.DELANTERO,      82));
+        Metz.getJugadores().add(new Jugador("Georges",  "Mikautadze","Georgia",    318, null, 10, "57000", null, 13, Posicion.DELANTERO,      84));
+        Metz.getJugadores().add(new Jugador("Simon",    "Elisor",   "Francia",     319, null, 11, "57000", null, 13, Posicion.DELANTERO,      82));
+
+        lista.add(Metz);
+
+        Equipo Lorient = new Equipo(14, "FC Lorient", "Lorient", "Stade du Moustoir", 14);
+        Lorient.setEntrenador(new Entrenador("Regis", "Le Bris", "Francia", 14));
+
+        Lorient.getJugadores().add(new Jugador("Yvon",    "Mvogo",     "Suiza",        320, null, 38, "56100", null, 14, Posicion.PORTERO,        82));
+
+        Lorient.getJugadores().add(new Jugador("Gedeon",  "Kalulu",    "Francia",      321, null, 24, "56100", null, 14, Posicion.DEFENSA,        82));
+        Lorient.getJugadores().add(new Jugador("Montassar","Talbi",    "Tunez",        322, null,  3, "56100", null, 14, Posicion.DEFENSA,        83));
+        Lorient.getJugadores().add(new Jugador("Julien",  "Laporte",   "Francia",      323, null, 15, "56100", null, 14, Posicion.DEFENSA,        82));
+        Lorient.getJugadores().add(new Jugador("Vincent", "Le Goff",   "Francia",      324, null, 25, "56100", null, 14, Posicion.DEFENSA,        82));
+
+        Lorient.getJugadores().add(new Jugador("Laurent", "Abergel",   "Francia",      325, null, 19, "56100", null, 14, Posicion.CENTROCAMPISTA, 83));
+        Lorient.getJugadores().add(new Jugador("Imran",   "Louza",     "Marruecos",    326, null,  6, "56100", null, 14, Posicion.CENTROCAMPISTA, 83));
+        Lorient.getJugadores().add(new Jugador("Romain",  "Faivre",    "Francia",      327, null, 14, "56100", null, 14, Posicion.CENTROCAMPISTA, 83));
+
+        Lorient.getJugadores().add(new Jugador("Eli",     "Junior Kroupi","Francia",   328, null, 22, "56100", null, 14, Posicion.DELANTERO,      82));
+        Lorient.getJugadores().add(new Jugador("Bamba",   "Dieng",     "Senegal",      329, null, 11, "56100", null, 14, Posicion.DELANTERO,      83));
+        Lorient.getJugadores().add(new Jugador("Mohamed", "Bamba",     "Costa Marfil", 330, null,  9, "56100", null, 14, Posicion.DELANTERO,      82));
+
+        lista.add(Lorient);
+
+        Equipo Clermont = new Equipo(15, "Clermont Foot", "Clermont-Ferrand", "Stade Gabriel Montpied", 15);
+        Clermont.setEntrenador(new Entrenador("Pascal", "Gastien", "Francia", 15));
+
+        Clermont.getJugadores().add(new Jugador("Mory",     "Diaw",      "Senegal",      331, null, 99, "63000", null, 15, Posicion.PORTERO,        82));
+
+        Clermont.getJugadores().add(new Jugador("Alidu",    "Seidu",     "Ghana",        332, null, 36, "63000", null, 15, Posicion.DEFENSA,        82));
+        Clermont.getJugadores().add(new Jugador("Maximiliano","Caufriez","Belgica",      333, null,  5, "63000", null, 15, Posicion.DEFENSA,        82));
+        Clermont.getJugadores().add(new Jugador("Andy",     "Pelmar",    "Francia",      334, null, 17, "63000", null, 15, Posicion.DEFENSA,        82));
+        Clermont.getJugadores().add(new Jugador("Neto",     "Borges",    "Brasil",       335, null,  3, "63000", null, 15, Posicion.DEFENSA,        82));
+
+        Clermont.getJugadores().add(new Jugador("Johan",    "Gastien",   "Francia",      336, null, 25, "63000", null, 15, Posicion.CENTROCAMPISTA, 82));
+        Clermont.getJugadores().add(new Jugador("Habib",    "Keita",     "Mali",         337, null,  6, "63000", null, 15, Posicion.CENTROCAMPISTA, 82));
+        Clermont.getJugadores().add(new Jugador("Muhammed", "Cham",      "Austria",      338, null, 10, "63000", null, 15, Posicion.CENTROCAMPISTA, 83));
+
+        Clermont.getJugadores().add(new Jugador("Shamar",   "Nicholson", "Jamaica",      339, null,  9, "63000", null, 15, Posicion.DELANTERO,      83));
+        Clermont.getJugadores().add(new Jugador("Jim",      "Allevinah", "Gabon",        340, null, 11, "63000", null, 15, Posicion.DELANTERO,      82));
+        Clermont.getJugadores().add(new Jugador("Grejohn",  "Kyei",      "Francia",      341, null, 95, "63000", null, 15, Posicion.DELANTERO,      82));
+
+        lista.add(Clermont);
+
+        Equipo LeHavre = new Equipo(16, "Le Havre AC", "Le Havre", "Stade Oceane", 16);
+        LeHavre.setEntrenador(new Entrenador("Luka", "Elsner", "Eslovenia", 16));
+
+        LeHavre.getJugadores().add(new Jugador("Arthur",   "Desmas",     "Francia",      342, null, 30, "76600", null, 16, Posicion.PORTERO,        82));
+
+        LeHavre.getJugadores().add(new Jugador("Loic",     "Nego",       "Hungria",      343, null,  7, "76600", null, 16, Posicion.DEFENSA,        82));
+        LeHavre.getJugadores().add(new Jugador("Arouna",   "Sangante",   "Senegal",      344, null, 93, "76600", null, 16, Posicion.DEFENSA,        83));
+        LeHavre.getJugadores().add(new Jugador("Gautier",  "Lloris",     "Francia",      345, null,  4, "76600", null, 16, Posicion.DEFENSA,        82));
+        LeHavre.getJugadores().add(new Jugador("Christopher","Operi",    "Costa Marfil", 346, null, 27, "76600", null, 16, Posicion.DEFENSA,        82));
+
+        LeHavre.getJugadores().add(new Jugador("Abdoulaye","Toure",      "Guinea",       347, null, 94, "76600", null, 16, Posicion.CENTROCAMPISTA, 83));
+        LeHavre.getJugadores().add(new Jugador("Daler",    "Kuzyaev",    "Rusia",        348, null, 14, "76600", null, 16, Posicion.CENTROCAMPISTA, 83));
+        LeHavre.getJugadores().add(new Jugador("Yassine",  "Kechtout",   "Francia",      349, null,  8, "76600", null, 16, Posicion.CENTROCAMPISTA, 82));
+
+        LeHavre.getJugadores().add(new Jugador("Nabil",    "Alioui",     "Marruecos",    350, null, 10, "76600", null, 16, Posicion.DELANTERO,      83));
+        LeHavre.getJugadores().add(new Jugador("Andre",    "Ayew",       "Ghana",        351, null, 28, "76600", null, 16, Posicion.DELANTERO,      83));
+        LeHavre.getJugadores().add(new Jugador("Josue",    "Casimir",    "Francia",      352, null, 23, "76600", null, 16, Posicion.DELANTERO,      82));
+
+        lista.add(LeHavre);
+
+        return lista;
+    }
+
 
     private void menuPartidos() {
 
