@@ -12,6 +12,7 @@ public class Partido {
     private int idPartido;
     private LocalDate fecha;
     private Jugador mvp;
+    private boolean jugado = false;
     private int golesLocal;
     private int golesVisitante;
     private Equipo equipoLocal;
@@ -21,7 +22,7 @@ public class Partido {
     private Arbitro arbitro;
 
 
-    public Partido(LocalDate fecha, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitro, int idLiga, int numeroJornada) {
+    public Partido(LocalDate fecha, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitro, int idLiga, int numeroJornada ) {
         this.idPartido = contadorId++;
         this.fecha = fecha;
         this.equipoLocal = equipoLocal;
@@ -31,8 +32,12 @@ public class Partido {
         this.numeroJornada = numeroJornada;
         this.golesLocal = 0;
         this.golesVisitante = 0;
+        this.jugado = false;
     }
 
+    public boolean isJugado() {
+        return jugado;
+    }
     public int getIdPartido() {
         return idPartido;
     }
@@ -73,6 +78,10 @@ public class Partido {
         return contadorId;
     }
 
+    public Jugador getMvp() {
+        return mvp;
+    }
+
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
@@ -105,10 +114,46 @@ public class Partido {
             golesVisitante = golesLocal;
         }
         calcularMVP();
+        this.jugado = true;
     }
 
     private void calcularMVP() {
+        Random r = new Random();
 
+        Jugador mejor = null;
+        double mejorNota = -1;
+
+        for (Jugador j : equipoLocal.getJugadores()) {
+            int goles = r.nextInt(3);
+            int asistencias = r.nextInt(2);
+            int faltas = r.nextInt(3);
+
+            double nota = (goles * 10)
+                    + (asistencias * 6)
+                    - (faltas * 2)
+                    + (j.getMedia() / 10.0);
+            if (nota > mejorNota) {
+                mejorNota = nota;
+                mejor = j;
+            }
+        }
+        for (Jugador j : equipoVisitante.getJugadores()) {
+
+            int goles = r.nextInt(3);
+            int asistencias = r.nextInt(2);
+            int faltas = r.nextInt(3);
+
+            double nota = (goles * 10)
+                    + (asistencias * 6)
+                    - (faltas * 2)
+                    + (j.getMedia() / 10.0);
+
+            if (nota > mejorNota) {
+                mejorNota = nota;
+                mejor = j;
+            }
+        }
+        mvp = mejor;
     }
 
     @Override

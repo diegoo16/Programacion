@@ -1,8 +1,6 @@
 package proyectoLiga.principal;
 
-import proyectoLiga.competicion.Equipo;
-import proyectoLiga.competicion.Liga;
-import proyectoLiga.competicion.Posicion;
+import proyectoLiga.competicion.*;
 import proyectoLiga.personas.Entrenador;
 import proyectoLiga.personas.Jugador;
 
@@ -85,8 +83,7 @@ public class Menu {
                     menuEquipos();
                     break;
                 case 2:
-                    System.out.println("Partidos (aun no esta hecho)");
-                    pausar();
+                    menuPartidos();
                     break;
                 case 3:
                     System.out.println("Resultados (aun no esta hecho)");
@@ -839,5 +836,49 @@ public class Menu {
         return lista;
 
 
+    }
+
+    private void menuPartidos() {
+
+        if (ligaActual.getJornadas().isEmpty()) {
+            generarJornadaAleatoria();
+        }
+
+        System.out.println(" PARTIDOS ");
+
+        for (Jornada jornada : ligaActual.getJornadas()) {
+            System.out.println(" Jornada " + jornada.getNumero());
+
+            for ( Partido partido : jornada.getPartidos() ) {
+                if (!partido.isJugado()){
+                    partido.simularPartido();
+                }
+                System.out.println(partido);
+
+                if (partido.getMvp() != null){
+                    System.out.println("MVP: " + partido.getMvp().getNombre() + " " + partido.getMvp().getApellido());
+                }
+            }
+        }
+    }
+
+
+    private void generarJornadaAleatoria() {
+        List <Equipo> equipos = new ArrayList<>(ligaActual.getEquipos());
+        java.util.Collections.shuffle(equipos);
+
+        int numeroJornada = 1;
+        Jornada jornada = new Jornada(ligaActual.getIdLiga(), numeroJornada);
+
+        for (int i = 0; i < equipos.size(); i+= 2) {
+
+            Equipo local = equipos.get(i);
+            Equipo visitante = equipos.get(i+1);
+
+            Partido partido = new Partido ( LocalDate.now() , local , visitante , null , ligaActual.getIdLiga() , numeroJornada);
+            jornada.addPartido(partido);
+
+        }
+        ligaActual.addJornada(jornada);
     }
 }
