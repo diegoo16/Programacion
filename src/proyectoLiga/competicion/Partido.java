@@ -1,13 +1,17 @@
 package proyectoLiga.competicion;
 
 import proyectoLiga.personas.Arbitro;
+import proyectoLiga.personas.Jugador;
+
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Partido {
 
     private static int contadorId = 1;
     private int idPartido;
     private LocalDate fecha;
+    private Jugador mvp;
     private int golesLocal;
     private int golesVisitante;
     private Equipo equipoLocal;
@@ -81,6 +85,31 @@ public class Partido {
         this.golesVisitante = golesVisitante;
     }
 
+    public void simularPartido() {
+        int mediaLocal = equipoLocal.calcularMediaEquipo();
+        int mediaVisitante = equipoVisitante.calcularMediaEquipo();
+
+        Random r = new Random();
+
+        int fuerzaLocal = mediaLocal + r.nextInt(50);
+        int fuerzaVisitante = mediaVisitante + r.nextInt(50);
+
+        if (fuerzaLocal > fuerzaVisitante) {
+            golesLocal = r.nextInt(3) + 1;
+            golesVisitante = r.nextInt(2);
+        } else if (fuerzaVisitante > fuerzaLocal) {
+            golesVisitante = r.nextInt(3) + 1;
+            golesLocal = r.nextInt(2);
+        }else  {
+            golesLocal = r.nextInt(3);
+            golesVisitante = golesLocal;
+        }
+        calcularMVP();
+    }
+
+    private void calcularMVP() {
+
+    }
 
     @Override
     public String toString() {
