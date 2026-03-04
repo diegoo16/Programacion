@@ -22,6 +22,8 @@ public class Equipo {
     private int partidosPerdidos;
     private int golesAFavor;
     private int golesEnContra;
+    private Patrocinador patrocinador;
+    private int nivel;
 
 
     public Equipo(int idEquipo, String nombre, String ciudad, String estadio, int idEntrenador) {
@@ -30,7 +32,6 @@ public class Equipo {
         this.ciudad = ciudad;
         this.estadio = estadio;
         this.idEntrenador = idEntrenador;
-
         this.jugadores = new ArrayList<>();
     }
 
@@ -90,6 +91,22 @@ public class Equipo {
 
     public int getGolesEnContra() {
         return golesEnContra;
+    }
+
+    public Patrocinador getPatrocinador() {
+        return patrocinador;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setPatrocinador(Patrocinador patrocinador) {
+        this.patrocinador = patrocinador;
     }
 
     public void setPuntos(int puntos) {

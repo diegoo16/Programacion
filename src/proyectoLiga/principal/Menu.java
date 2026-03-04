@@ -58,7 +58,7 @@ public class Menu {
         int op = leerOpcion(1,3);
 
         if (op == 1) ligaActual = deluxLeague;
-        if (op == 2) ligaActual = premierleague;
+        else if (op == 2) ligaActual = premierleague;
         else ligaActual = ligueOne;
 
         System.out.println(" Perfecto , has elegido: " + ligaActual.getNombre());
@@ -152,7 +152,8 @@ public class Menu {
         System.out.println("Nombre  : " + e.getNombre());
         System.out.println("Ciudad  : " + e.getCiudad());
         System.out.println("Estadio : " + e.getEstadio());
-        System.out.println("Entrenador: " + e.getEntrenador());
+        System.out.println("Entrenador : " + e.getEntrenador());
+        System.out.println("Patrocinador : " + e.getPatrocinador());
 
         System.out.println("--- 11 INICIAL ---");
         for (int i = 0; i < 11; i++) {
@@ -194,6 +195,8 @@ public class Menu {
         for (Equipo e : equipos) {
             liga.addEquipo(e);
         }
+
+        asignarPatrocinadores(liga);
         return liga;
     }
 
@@ -204,6 +207,8 @@ public class Menu {
         for (Equipo e : equipos) {
             liga.addEquipo(e);
         }
+
+        asignarPatrocinadores(liga);
         return liga;
     }
 
@@ -214,6 +219,8 @@ public class Menu {
         for (Equipo e : equipos) {
             liga.addEquipo(e);
         }
+
+        asignarPatrocinadores(liga);
         return liga;
     }
 
@@ -528,7 +535,6 @@ public class Menu {
         getafe.getJugadores().add(new Jugador("Martín","Satriano","Uruguay",176,null,19,"28901",null,16,Posicion.DELANTERO , 79));
 
         lista.add(getafe);
-
 
         return lista;
     }
@@ -1242,7 +1248,7 @@ public class Menu {
 
 
     private void menuClasificacion() {
-        List <Equipo> tabla = new ArrayList<>(ligaActual.getEquipos());
+        List<Equipo> tabla = new ArrayList<>(ligaActual.getEquipos());
 
         Collections.sort(tabla, new Comparator<Equipo>() {
             @Override
@@ -1251,7 +1257,7 @@ public class Menu {
             }
         });
 
-        System.out.println(" CLASIFICACIÓN "+ ligaActual.getNombre());
+        System.out.println(" CLASIFICACIÓN " + ligaActual.getNombre());
 
         for (int i = 0; i < tabla.size(); i++) {
             Equipo e = tabla.get(i);
@@ -1259,4 +1265,36 @@ public class Menu {
         }
         pausar();
     }
-}
+
+    private void asignarPatrocinadores (Liga liga) {
+            String[] marcasTop = {"Emirates", "Nike", "Adidas", "Qatar Airways", "Red Bull", "Etihad", "Spotify", "Puma"};
+            String[] marcasMedia = {"Coca-Cola", "Samsung", "Pepsi", "PlayStation", "Heineken", "Visa", "Amazon", "Hyundai"};
+            String[] marcasBaja = {"LocalGym", "Taller Romero", "Panadería San Juan", "Seguros López", "Construcciones Pérez", "Clínica Dental", "Restaurante El Rincón", "Autoescuela Centro"};
+
+            int idPatrocinador = 1;
+
+            for (Equipo e : liga.getEquipos()) {
+
+                int tmp = e.getNivel();
+
+                String marca;
+                double dinero;
+
+                if (tmp <= 2) {
+                    marca = marcasTop[(idPatrocinador - 1) % marcasTop.length];
+                    dinero = 12_000_000 - (tmp - 1) * 1_500_000;
+                } else if (tmp <= 6) {
+                    marca = marcasMedia[(idPatrocinador - 1) % marcasMedia.length];
+                    dinero = 6_000_000 - (tmp - 3) * 750_000;
+                } else {
+                    marca = marcasBaja[(idPatrocinador - 1) % marcasBaja.length];
+                    dinero = 1_500_000 - (tmp - 7) * 100_000;
+                    if (dinero < 300_000) dinero = 300_000;
+                }
+
+                e.setPatrocinador(new Patrocinador (idPatrocinador, marca, dinero));
+                idPatrocinador++;
+            }
+        }
+
+    }
