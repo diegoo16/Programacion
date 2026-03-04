@@ -14,6 +14,7 @@ public class Jugador extends Persona {
     private int idEquipo;
     private Posicion posicion;
     private int media;
+    private int goles;
 
 
     public Jugador(String nombre, String apellido, String nacionalidad, int idJugador, LocalDate fechaNacimiento, int dorsal, String codigoPostal, String telefono, int idEquipo, Posicion posicion, int media) {
@@ -87,6 +88,18 @@ public class Jugador extends Persona {
 
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
+    }
+
+    public int getGoles() {
+        return goles;
+    }
+
+    public void setGoles(int goles) {
+        this.goles = goles;
+    }
+
+    public void sumarGol() {
+        goles++;
     }
 
     public int getMedia() {
