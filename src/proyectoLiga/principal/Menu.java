@@ -1302,7 +1302,7 @@ public class Menu {
 
         for (int i = 0; i < tabla.size(); i++) {
             Equipo e = tabla.get(i);
-            System.out.println((i + 1) + e.getNombre() + " - " + e.getPuntos() + " puntos ");
+            System.out.println((i + 1) + ". " + e.getNombre() + " - " + e.getPuntos() + " puntos");
         }
         pausar();
     }
