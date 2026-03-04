@@ -1226,6 +1226,10 @@ public class Menu {
         sc.nextLine();
     }
 
+    private void menuPremios() {
+
+    }
+
 
     private void generarJornadaAleatoria(int numeroJornada) {
 
