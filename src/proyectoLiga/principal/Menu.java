@@ -89,8 +89,7 @@ public class Menu {
                     menuPartidos();
                     break;
                 case 3:
-                    System.out.println("Resultados (aun no esta hecho)");
-                    pausar();
+                    menuPremios();
                     break;
                 case 4:
                     menuClasificacion();
@@ -1225,6 +1224,42 @@ public class Menu {
 
         System.out.println(" Temporada terminada. Pulsa ENTER para volver al menú.");
         sc.nextLine();
+    }
+
+    private void menuPremios() {
+        System.out.println(" Premios de la temporada ");
+
+        Equipo campeon = ligaActual.getEquipos().get(0);
+
+        for (Equipo e : ligaActual.getEquipos()) {
+            if (e.getPuntos() > campeon.getPuntos()) {
+                campeon = e;
+            }
+        }
+
+        System.out.println(" Campeon de liga: " + campeon.getNombre());
+
+        Jugador pichichi = null;
+        int maximosGoles = -1;
+
+        for (Equipo e : ligaActual.getEquipos()) {
+            for (Jugador j : e.getJugadores()) {
+
+
+                if (j.getPosicion() == Posicion.PORTERO){
+                    continue;
+                }
+                if (j.getGoles() > maximosGoles){
+                    maximosGoles = j.getGoles();
+                    pichichi = j;
+                }
+            }
+        }
+
+        if (pichichi != null) {
+            System.out.println(" Pichichi de la liga : " + pichichi.getNombre() + " " + pichichi.getApellido() + " con un total de " + maximosGoles + " goles");
+        }
+        pausar();
     }
 
 
