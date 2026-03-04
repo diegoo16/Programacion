@@ -161,7 +161,7 @@ public class Menu {
 
         System.out.println(AMARILLO + "--- 11 INICIAL ---" + RESET);
         for (int i = 0; i < 11; i++) {
-            System.out.println((i + 1) + ". " + e.getJugadores().get(i));
+            System.out.println((i + 1) + ". " + " " + equipos.get(i).getNombre());
         }
 
         pausar();
