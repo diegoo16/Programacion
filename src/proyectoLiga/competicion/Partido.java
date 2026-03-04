@@ -3,6 +3,8 @@ package proyectoLiga.competicion;
 import proyectoLiga.personas.Arbitro;
 import proyectoLiga.personas.Jugador;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.time.LocalDate;
 import java.util.Random;
 
@@ -115,10 +117,54 @@ public class Partido {
             golesLocal = r.nextInt(3);
             golesVisitante = golesLocal;
         }
+
+        for (int i = 0; i < golesLocal; i++) {
+
+            Jugador goleador = elegirGoleador(equipoLocal);
+            goleador.setGoles(goleador.getGoles() + 1);
+
+        }
+
+        for (int i = 0; i < golesVisitante; i++) {
+
+            Jugador goleador = elegirGoleador(equipoVisitante);
+            goleador.setGoles(goleador.getGoles() + 1);
+
+        }
         calcularMVP();
-        this.jugado = true;
         aplicarResultadoEnClasificacion();
         jugado = true;
+    }
+
+
+    private Jugador elegirGoleador(Equipo equipo) {
+
+        List<Jugador> posibles = new ArrayList<>();
+
+        for (Jugador j : equipo.getJugadores()) {
+
+            if (j.getPosicion() == Posicion.PORTERO) {
+                continue;
+            }
+
+            if (j.getPosicion() == Posicion.DELANTERO) {
+                posibles.add(j);
+                posibles.add(j);
+                posibles.add(j);
+            }
+
+            else if (j.getPosicion() == Posicion.CENTROCAMPISTA) {
+                posibles.add(j);
+                posibles.add(j);
+            }
+
+            else {
+                posibles.add(j);
+            }
+        }
+
+        Random r = new Random();
+        return posibles.get(r.nextInt(posibles.size()));
     }
 
     private void calcularMVP() {

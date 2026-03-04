@@ -27,6 +27,7 @@ public class Jugador extends Persona {
         this.idEquipo = idEquipo;
         this.posicion = posicion;
         this.media = media;
+        this.goles = 0;
     }
 
 

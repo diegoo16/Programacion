@@ -74,7 +74,7 @@ public class Menu {
             System.out.println("=== MENÚ PRINCIPAL (" + ligaActual.getNombre() + ") ===");
             System.out.println("1. Equipos");
             System.out.println("2. Partidos");
-            System.out.println("3. Resultados");
+            System.out.println("3. Premios");
             System.out.println("4. Clasificación");
             System.out.println("5. Cambiar liga");
             System.out.println("6. Salir");
