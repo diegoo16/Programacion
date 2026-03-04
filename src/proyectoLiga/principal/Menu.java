@@ -15,6 +15,11 @@ public class Menu {
     private Liga ligaActual;
     private final Liga ligueOne;
 
+    private static final String RESET = "\u001B[0m";
+    private static final String ROJO = "\u001B[31m";
+    private static final String AMARILLO = "\u001B[33m";
+    private static final String AZUL = "\u001B[34m";
+
 
     public Menu() {
         this.sc = new Scanner(System.in);
@@ -32,15 +37,15 @@ public class Menu {
     }
 
     private void historiaIntro() throws InterruptedException {
-        System.out.println("========================================");
-        System.out.println("         DELUX LEAGUE");
-        System.out.println("========================================");
+        System.out.println(AZUL + "========================================" + RESET);
+        System.out.println(AZUL + "         XTART LEAGUE" + RESET);
+        System.out.println(AZUL + "========================================" + RESET);
 
-        escribirConPausa("El fútbol nunca ha sido solo un juego", 700);
-        escribirConPausa("Es constancia, sacrificio y momentos inolvidables", 700);
-        escribirConPausa("Los mejores equipos compiten por la gloria", 700);
+        escribirConPausa(AZUL + "El fútbol nunca ha sido solo un juego" + RESET , 700);
+        escribirConPausa(AZUL + "Es constancia, sacrificio y momentos inolvidables" + RESET , 700);
+        escribirConPausa(AZUL + "Los mejores equipos compiten por la gloria" + RESET , 700);
 
-        System.out.println("Pulsa ENTER para empezar");
+        System.out.println(AMARILLO + "Pulsa ENTER para empezar" +  RESET);
         sc.nextLine();
     }
 
@@ -50,10 +55,10 @@ public class Menu {
     }
 
     private void elegirLiga() {
-        System.out.println(" ELIGE LA LIGA ");
-        System.out.println("1. " + deluxLeague.getNombre());
-        System.out.println("2. " + premierleague.getNombre());
-        System.out.println("3. " + ligueOne.getNombre());
+        System.out.println(AZUL + " ELIGE LA LIGA " + RESET);
+        System.out.println(AMARILLO + "1. " + deluxLeague.getNombre() + RESET);
+        System.out.println(AMARILLO + "2. " + premierleague.getNombre() + RESET);
+        System.out.println(AMARILLO + "3. " + ligueOne.getNombre() + RESET);
 
         int op = leerOpcion(1,3);
 
@@ -61,7 +66,7 @@ public class Menu {
         else if (op == 2) ligaActual = premierleague;
         else ligaActual = ligueOne;
 
-        System.out.println(" Perfecto , has elegido: " + ligaActual.getNombre());
+        System.out.println(AZUL + " Perfecto , has elegido: " + ligaActual.getNombre() + RESET);
         pausar();
     }
 
@@ -71,13 +76,13 @@ public class Menu {
         }
         int opcion;
         do {
-            System.out.println("=== MENÚ PRINCIPAL (" + ligaActual.getNombre() + ") ===");
-            System.out.println("1. Equipos");
-            System.out.println("2. Partidos");
-            System.out.println("3. Premios");
-            System.out.println("4. Clasificación");
-            System.out.println("5. Cambiar liga");
-            System.out.println("6. Salir");
+            System.out.println(AZUL + "=== MENÚ PRINCIPAL (" + RESET + ligaActual.getNombre() + ") ===");
+            System.out.println(AZUL + "1. Equipos" + RESET);
+            System.out.println(AZUL + "2. Partidos" + RESET);
+            System.out.println(AZUL + "3. Premios" + RESET);
+            System.out.println(AZUL + "4. Clasificación" + RESET);
+            System.out.println(AZUL + "5. Cambiar liga" + RESET);
+            System.out.println(ROJO + "6. Salir" + RESET);
 
             opcion = leerOpcion(1, 6);
 
@@ -98,7 +103,7 @@ public class Menu {
                     elegirLiga();
                     break;
                     case 6:
-                        System.out.println("Saliendo...");
+                        System.out.println(ROJO + "Saliendo..." + RESET);
                         break;
             }
         } while (opcion != 6);
@@ -107,10 +112,10 @@ public class Menu {
     private void menuEquipos() {
         int opcion;
         do {
-            System.out.println("=== EQUIPOS === (" + ligaActual.getNombre() + ") ===");
-            System.out.println("1. Listar equipos");
-            System.out.println("2. Ver detalle de un equipo");
-            System.out.println("3. Volver");
+            System.out.println(AZUL + "=== EQUIPOS === (" + ligaActual.getNombre() + ") ===" + RESET);
+            System.out.println(AZUL + "1. Listar equipos" + RESET);
+            System.out.println(AZUL + "2. Ver detalle de un equipo" + RESET);
+            System.out.println(ROJO + "3. Volver" + RESET);
 
             opcion = leerOpcion(1, 3);
 
@@ -123,7 +128,7 @@ public class Menu {
                     verDetalleEquipo();
                     break;
                 case 3:
-                    System.out.println("Volviendo...");
+                    System.out.println(ROJO + "Volviendo..." + RESET);
                     break;
             }
         } while (opcion != 3);
@@ -132,7 +137,7 @@ public class Menu {
     private void listarEquipos() {
         List <Equipo> equipos = ligaActual.getEquipos();
 
-        System.out.println("--- EQUIPOS DE LA LIGA ---");
+        System.out.println(AZUL + "--- EQUIPOS DE LA LIGA ---" + RESET);
         for (int i = 0; i < equipos.size(); i++) {
             System.out.println((i + 1) + ". " + equipos.get(i).getNombre());
         }
@@ -142,19 +147,19 @@ public class Menu {
         List <Equipo> equipos = ligaActual.getEquipos();
 
         listarEquipos();
-        System.out.println("Elige el número del equipo:");
+        System.out.println( AZUL + "Elige el número del equipo:" + RESET);
         int num = leerOpcion(1, equipos.size());
         Equipo e = equipos.get(num - 1);
 
 
-        System.out.println("DETALLES DEL EQUIPO");
-        System.out.println("Nombre  : " + e.getNombre());
-        System.out.println("Ciudad  : " + e.getCiudad());
-        System.out.println("Estadio : " + e.getEstadio());
-        System.out.println("Entrenador : " + e.getEntrenador());
-        System.out.println("Patrocinador : " + e.getPatrocinador());
+        System.out.println(AMARILLO + "DETALLES DEL EQUIPO" +RESET);
+        System.out.println(AMARILLO + "Nombre  : " + e.getNombre() + RESET);
+        System.out.println(AMARILLO + "Ciudad  : " + e.getCiudad() + RESET);
+        System.out.println(AMARILLO + "Estadio : " + e.getEstadio() + RESET);
+        System.out.println(AMARILLO + "Entrenador : " + e.getEntrenador() + RESET);
+        System.out.println(AMARILLO + "Patrocinador : " + e.getPatrocinador() + RESET);
 
-        System.out.println("--- 11 INICIAL ---");
+        System.out.println(AMARILLO + "--- 11 INICIAL ---" + RESET);
         for (int i = 0; i < 11; i++) {
             System.out.println((i + 1) + ". " + e.getJugadores().get(i));
         }
@@ -165,11 +170,11 @@ public class Menu {
     private int leerOpcion(int minimo, int maximo) {
         int opcion;
         while (true) {
-            System.out.print("Elige una opción: ");
+            System.out.print(AZUL + "Elige una opción: " + RESET);
             while (!sc.hasNextInt()) {
-                System.out.println("Error: escribe un número válido.");
+                System.out.println(ROJO + "Error: escribe un número válido." + RESET);
                 sc.next();
-                System.out.println("Elige una opción: ");
+                System.out.println(AZUL + "Elige una opción: " + RESET);
             }
             opcion = sc.nextInt();
             sc.nextLine();
@@ -177,13 +182,13 @@ public class Menu {
             if (opcion >= minimo && opcion <= maximo) {
                 return opcion;
             } else {
-                System.out.println("Opción fuera de rango.");
+                System.out.println(ROJO + "Opción fuera de rango." + RESET);
             }
         }
     }
 
     private void pausar() {
-        System.out.println("Pulsa ENTER para continuar...");
+        System.out.println(AZUL + "Pulsa ENTER para continuar..." + RESET);
         sc.nextLine();
     }
 
@@ -1209,25 +1214,25 @@ public class Menu {
                 System.out.println(partido);
 
                 if (partido.getMvp() != null) {
-                    System.out.println("MVP : " + partido.getMvp().getNombre() + " " + partido.getMvp().getApellido());
+                    System.out.println(AZUL + "MVP : " + partido.getMvp().getNombre() + " " + partido.getMvp().getApellido() + RESET);
                 }
             }
 
             if (numeroJornada == maxJornadas) break;
 
-            System.out.println(" Pulsa ENTER para ver la siguiente jornada (o escribe 0 para volver al menú)");
+            System.out.println(AZUL + " Pulsa ENTER para ver la siguiente jornada (o escribe 0 para volver al menú)" + RESET);
             String entrada = sc.nextLine();
             if (entrada.trim().equals("0")) return;
 
             numeroJornada++;
         }
 
-        System.out.println(" Temporada terminada. Pulsa ENTER para volver al menú.");
+        System.out.println(ROJO + " Temporada terminada. Pulsa ENTER para volver al menú." + RESET);
         sc.nextLine();
     }
 
     private void menuPremios() {
-        System.out.println(" Premios de la temporada ");
+        System.out.println(AZUL + " Premios de la temporada " + RESET);
 
         Equipo campeon = ligaActual.getEquipos().get(0);
 
@@ -1237,7 +1242,7 @@ public class Menu {
             }
         }
 
-        System.out.println(" Campeon de liga: " + campeon.getNombre());
+        System.out.println(AMARILLO + " Campeon de liga: " + campeon.getNombre() + RESET);
 
         Jugador pichichi = null;
         int maximosGoles = -1;
@@ -1257,7 +1262,7 @@ public class Menu {
         }
 
         if (pichichi != null) {
-            System.out.println(" Pichichi de la liga : " + pichichi.getNombre() + " " + pichichi.getApellido() + " con un total de " + maximosGoles + " goles");
+            System.out.println(AMARILLO + " Pichichi de la liga : " + pichichi.getNombre() + " " + pichichi.getApellido() + " con un total de " + maximosGoles + " goles" + RESET);
         }
         pausar();
     }
@@ -1293,7 +1298,7 @@ public class Menu {
             }
         });
 
-        System.out.println(" CLASIFICACIÓN " + ligaActual.getNombre());
+        System.out.println(AZUL + " CLASIFICACIÓN " + ligaActual.getNombre() + RESET);
 
         for (int i = 0; i < tabla.size(); i++) {
             Equipo e = tabla.get(i);
