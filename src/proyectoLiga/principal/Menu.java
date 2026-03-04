@@ -228,7 +228,7 @@ public class Menu {
         List<Equipo> lista = new ArrayList<>();
 
         Equipo madrid = new Equipo(1,"Real Madrid","Madrid","Santiago Bernabéu",1);
-        madrid.setEntrenador(new Entrenador("Carlo","Ancelotti","Italia",1));
+        madrid.setEntrenador(new Entrenador("Alvaro","Arbeloa","España",1));
 
         madrid.getJugadores().add(new Jugador("Thibaut","Courtois","Belgica",1,null,1,"28001",null,1,Posicion.PORTERO , 90));
         madrid.getJugadores().add(new Jugador("Dani","Carvajal","España",2,null,2,"28001",null,1,Posicion.DEFENSA , 83));
@@ -278,7 +278,7 @@ public class Menu {
         leganes.getJugadores().add(new Jugador("Dani","Rodríguez","España",29,null,9,"28918",null,3,Posicion.CENTROCAMPISTA , 75));
         leganes.getJugadores().add(new Jugador("Amadou","Diawara","Guinea",30,null,24,"28918",null,3,Posicion.CENTROCAMPISTA , 78));
 
-        leganes.getJugadores().add(new Jugador("Naím","García","España",31,null,17,"28918",null,3,Posicion.DELANTERO , 74));
+        leganes.getJugadores().add(new Jugador("Dani","Rodríguez","España",31,null,9,"28918",null,3,Posicion.DELANTERO , 80));
         leganes.getJugadores().add(new Jugador("Luis","Asué","Guinea",32,null,12,"28918",null,3,Posicion.DELANTERO , 73));
         leganes.getJugadores().add(new Jugador("Juan","Cruz","España",33,null,10,"28918",null,3,Posicion.DELANTERO , 77));
 
@@ -875,7 +875,8 @@ public class Menu {
 
         PSG.getJugadores().add(new Jugador("Ousmane",   "Dembele",    "Francia",       185, null, 10, "75016", null, 1, Posicion.DELANTERO,      86));
         PSG.getJugadores().add(new Jugador("Goncalo",   "Ramos",      "Portugal",      186, null,  9, "75016", null, 1, Posicion.DELANTERO,      84));
-        PSG.getJugadores().add(new Jugador("Bradley",   "Barcola",    "Francia",       187, null, 29, "75016", null, 1, Posicion.DELANTERO,      84));
+        PSG.getJugadores().add(new Jugador("Desire",   "Doué",    "Francia",       187, null, 14, "75016", null, 1, Posicion.DELANTERO,      84));
+
 
         lista.add(PSG);
 
