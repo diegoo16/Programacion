@@ -1,32 +1,3 @@
-Diego
-diegolgns.16_55820
-En línea
-
-Hipo
-ha añadido a
-Diego
-al grupo. — 03/03/2026 18:43
-Tienes una llamada perdida de
-Hipo
-que ha durado unos segundos. — 03/03/2026 18:43
-Hipo
-ha iniciado una llamada que ha durado un minuto. — 03/03/2026 18:43
-eldanx
-ha iniciado una llamada que ha durado unos segundos. — 03/03/2026 18:44
-Hipo
-ha iniciado una llamada que ha durado 13 minutos. — ayer a las 18:04
-Hipo — ayer a las 19:47
-https://teams.microsoft.com/l/message/19:meeting_ZDA4MTZlMWYtZmJmNy00MDFlLWE0MzUtM2Y1ZTUyNjA0OTVi@thread.v2/1772649815343?context=%7B"contextType"%3A"chat"%7D
-Microsoft Teams
-Imagen
-eldanx — ayer a las 20:14
-Tipo de archivo adjunto: acrobat
-Memoria Sistemas Informaticos - Documentos de Google.pdf
-291.96 KB
-eldanx — ayer a las 23:17
-ES EL UML QUE LO HE ESCRITO MAL SIN QUERER
-Imagen
-eldanx — 9:34
 # ⚽ XTART LEAGUE – Simulador de Ligas de Fútbol en Java
 
 ## 📖 Descripción
@@ -34,9 +5,6 @@ eldanx — 9:34
 **XTART LEAGUE** es una aplicación desarrollada en **Java** que simula una competición de fútbol entre distintos equipos pertenecientes a diferentes ligas.
 El programa permite al usuario interactuar mediante un **menú en consola**, explorar equipos, visualizar plantillas, simular partidos y consultar la clasificación de la liga.
 
-message.txt
-7 KB
-﻿
 # ⚽ XTART LEAGUE – Simulador de Ligas de Fútbol en Java
 
 ## 📖 Descripción
@@ -135,13 +103,13 @@ Atributos principales:
 Funciones importantes:
 
 ```java
-calcularMediaEquipo()
+calcularMediaEquipo(); 
 ```
 
 Calcula la media de nivel de los jugadores del equipo.
 
 ```java
-resetEstadisticas()
+resetEstadisticas(); 
 ```
 
 Reinicia las estadísticas de la temporada.
@@ -163,7 +131,7 @@ Incluye:
 Función clave:
 
 ```java
-simularPartido()
+simularPartido(); 
 ```
 
 La simulación se basa en:
@@ -219,9 +187,9 @@ Enum que define las posiciones de los jugadores:
 
 ```java
 PORTERO
-DEFENSA
+DEFENSA;
 CENTROCAMPISTA
-DELANTERO
+DELANTERO;
 ```
 
 ---
@@ -256,7 +224,7 @@ Incluye:
 Funciones:
 
 ```java
-sumarGol()
+sumarGol(); 
 ```
 
 Incrementa el número de goles del jugador.
@@ -290,7 +258,7 @@ El programa se ejecuta mediante un **menú interactivo en consola** que permite:
 5️⃣ Ver clasificación
 6️⃣ Cambiar de liga
 
-El menú utiliza **colores ANSI** para mejorar la experiencia visual.
+El menú utiliza **colores** para mejorar la experiencia visual.
 
 ---
 
@@ -393,5 +361,3 @@ Uso libre para aprendizaje y mejora.
 ---
 
 # ⚽ “El fútbol no es solo un deporte… es una historia que se escribe en cada partido.”
-message.txt
-7 KB
